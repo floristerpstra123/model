@@ -20,3 +20,73 @@ ul {
 li {
     display: inline;
 }
+
+
+body {
+  background: linear-gradient(135deg, #0d0d0d, #5b004b);
+  min-height: 100vh;
+  margin: 0;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: linear-gradient(135deg, #f4f1ea, #e8e2f5);
+  }
+}
+
+nav ul {
+  display: flex;              /* zet items op een rij i.p.v. onder elkaar */
+  gap: 20rem;                  /* ruimte tussen de links */
+  list-style: none;           /* verwijdert de bullet-punten */
+  margin: 0;
+  padding: 0;
+  justify-content: center;    /* of: flex-start / flex-end / space-between */
+}
+
+nav a {
+  color: #cfc8e0;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.4rem 0;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: #ff00c8;             /* of een kleur passend bij je RGB-titel */
+}
+
+/* subtiele underline die intekent bij hover */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #ff00ee;
+  transition: width 0.25s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav {
+  border-bottom: 1px solid #26262F;   /* of een kleur naar keuze */
+  padding: 24px 0;                      /* ruimte boven/onder de links, zodat de balk ademt */
+}
+
+
+.glow {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,45,120,0.15), transparent 70%);
+  pointer-events: none;   /* zodat de gloed geen klikken blokkeert */
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
