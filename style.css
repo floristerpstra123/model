@@ -1,0 +1,22 @@
+h1 {color: rgb(255, 0, 136);
+  font-size: 150px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 1200;
+  text-align: center;
+ filter: url(#organicBlob);
+  mix-blend-mode: screen;
+  
+}
+
+
+
+ul {
+    display: flex;
+    justify-content: center;
+    gap: 300px;
+    list-style: none;
+}
+
+li {
+    display: inline;
+}
