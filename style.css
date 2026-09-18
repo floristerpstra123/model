@@ -1,9 +1,9 @@
 h1 {color: rgb(255, 0, 136);
-  font-size: 150px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: 1200;
+  font-family: "sneakers-pro", sans-serif;
+font-weight: 5000;
+font-style: normal;
   text-align: center;
- filter: url(#organicBlob);
+ font-size: 200px;
   mix-blend-mode: screen;
   
 }
@@ -44,8 +44,9 @@ nav ul {
 }
 
 nav a {
-  color: #cfc8e0;
+  color: #ff00d0;
   text-decoration: none;
+  font-family: "sneakers-pro", sans-serif;
   font-weight: 600;
   letter-spacing: 0.02em;
   padding: 0.4rem 0;
@@ -75,7 +76,7 @@ nav a:hover::after {
 }
 
 nav {
-  border-bottom: 1px solid #26262F;   /* of een kleur naar keuze */
+  border-bottom: 1px ;   /* of een kleur naar keuze */
   padding: 24px 0;                      /* ruimte boven/onder de links, zodat de balk ademt */
 }
 
