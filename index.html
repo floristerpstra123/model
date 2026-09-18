@@ -1,67 +1,59 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <link rel="stylesheet" href="https://use.typekit.net/mtd8cyt.css">
-     <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="[jouw naam]" />
-    <meta name="color-scheme" content="dark light" />
-    
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Floris Terpstra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
 
-    <title>[Digitaal Tuintje van Floris]</title>
-    <link rel="stylesheet" href="./assets/style/normal.css" />
+  <div class="rig">
 
-    <!-- Importeer het webring component, voeg jouw eigen domein toe in data-page -->
-    <script
-      data-page="[https://floristerpstra.nl]"
-      src="https://digitaaltuintje.nl/webring.js"
-      defer
-    ></script>
-  </head>
-  <body>
-
-    <div class="glow"></div>
-    <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="https://github.com/floristerpstra123/model/blob/main/README.md">Log</a></li>
-          <li><a href="/story.html">Story</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-        </ul>
-      </nav>
-
-    <header>
-      <h1>Floris Terpstra</h1>
    
+    <header class="topbar">
+      <div class="project-name">
+        <span class="label">PROJECT NAME</span>
+        <span class="name">Floris Terpstra</span>
+      </div>
 
-
-
-
-      <p>
-        Mijn Github ->
-        <a href="https://github.com/floristerpstra123/model"
-          >Github</a
-        >
-      </p>
-
-      
+      <button class="lamp-switch" id="themeToggle" type="button" aria-pressed="false" aria-label="Wissel tussen dark en light mode">
+        <span class="bulb"></span>
+        <span class="track"></span>
+        <span class="state" id="themeState">DARK</span>
+      </button>
     </header>
 
-    <main>
-      <article>
-        <h2>[Voorbeeld artikel]</h2>
-        <p>[Dit is een voorbeeld artikel tekst...]</p>
-      </article>
-
-      <article>
-        <h2>31 augustus</h2>
-        <p>Vandaag behandelden we ....</p>
-      </article>
+   
+    <main class="eq-area">
+      <span class="placeholder"></span>
     </main>
 
-    <footer>
-      <p>[Copyleft 2026, all wrongs reversed]</p>
-    </footer>
-  </body>
+   
+    <nav class="controlbar" aria-label="Hoofdnavigatie">
+      <div class="bump" aria-hidden="true"></div>
+      <div class="knob-row">
+        <a class="knob-btn" href="https://github.com/floristerpstra123/model/blob/main/README.md" data-target="log">
+          <span class="knob"></span>
+          <span class="tick">LOG</span>
+        </a>
+        <a class="knob-btn" href="story.html" data-target="story">
+          <span class="knob"></span>
+          <span class="tick">STORY</span>
+        </a>
+        <a class="knob-btn" href="contact.html" data-target="contact">
+          <span class="knob"></span>
+          <span class="tick">CONTACT</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+
+<script src="script.js"></script>
+
+</body>
 </html>

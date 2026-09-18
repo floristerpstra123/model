@@ -1,93 +1,301 @@
-h1 {color: rgb(255, 0, 136);
-  font-family: "sneakers-pro", sans-serif;
-font-weight: 5000;
-font-style: normal;
-  text-align: center;
- font-size: 200px;
-  mix-blend-mode: screen;
-  
-}
 
-
-
-ul {
-    display: flex;
-    justify-content: center;
-    gap: 300px;
-    list-style: none;
-}
-
-li {
-    display: inline;
-}
-
-
-body {
-  background: linear-gradient(135deg, #0d0d0d, #5b004b);
-  min-height: 100vh;
-  margin: 0;
-}
-
-@media (prefers-color-scheme: light) {
-  body {
-    background: linear-gradient(135deg, #f4f1ea, #e8e2f5);
+  :root{
+    --bg: #121214;
+    --panel: #1b1b1f;
+    --panel-raised: #232328;
+    --ink: #ececef;
+    --ink-dim: #8d8d97;
+    --line: rgba(255,255,255,.14);
+    --accent: #7c6cf0;      
+    --accent-dim: #4d3f9e;
+    --lamp-on: #ffb648;    
+    --lamp-off: #4a4a52;
+    --shadow: rgba(0,0,0,.5);
+    --radius-panel: 22px;
   }
-}
 
-nav ul {
-  display: flex;              /* zet items op een rij i.p.v. onder elkaar */
-  gap: 20rem;                  /* ruimte tussen de links */
-  list-style: none;           /* verwijdert de bullet-punten */
-  margin: 0;
-  padding: 0;
-  justify-content: center;    /* of: flex-start / flex-end / space-between */
-}
+  [data-theme="light"]{
+    --bg: #eeeae0;
+    --panel: #f7f4ec;
+    --panel-raised: #fffdf7;
+    --ink: #201f1c;
+    --ink-dim: #7a766c;
+    --line: rgba(0,0,0,.14);
+    --accent: #5d4bd6;
+    --accent-dim: #d8d0ff;
+    --lamp-on: #e08a1e;
+    --lamp-off: #cfc9ba;
+    --shadow: rgba(0,0,0,.16);
+  }
 
-nav a {
-  color: #ff00d0;
-  text-decoration: none;
-  font-family: "sneakers-pro", sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  padding: 0.4rem 0;
-  position: relative;
-  transition: color 0.2s ease;
-}
+  *{ box-sizing: border-box; }
 
-nav a:hover,
-nav a:focus-visible {
-  color: #ff00c8;             /* of een kleur passend bij je RGB-titel */
-}
+  html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Space Mono", ui-monospace, "SF Mono", Consolas, monospace;
+    -webkit-font-smoothing: antialiased;
+    transition: background .35s ease, color .35s ease;
+  }
 
-/* subtiele underline die intekent bij hover */
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background: #ff00ee;
-  transition: width 0.25s ease;
-}
+  body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
 
-nav a:hover::after {
-  width: 100%;
-}
+  
+  .rig{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+  }
 
-nav {
-  border-bottom: 1px ;   /* of een kleur naar keuze */
-  padding: 24px 0;                      /* ruimte boven/onder de links, zodat de balk ademt */
-}
+  @media (min-width: 640px){
+    .rig{
+      max-width: 480px;
+      min-height: 92vh;
+      margin-top: 4vh;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 30px 60px var(--shadow);
+      border: 1px solid var(--line);
+    }
+  }
 
 
-.glow {
-  position: fixed;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,45,120,0.15), transparent 70%);
-  pointer-events: none;   /* zodat de gloed geen klikken blokkeert */
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
+  .topbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 18px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .project-name{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+    min-width: 0;
+  }
+
+  .project-name .label{
+    font-size: 10px;
+    letter-spacing: .12em;
+    color: var(--ink-dim);
+  }
+
+  .project-name .name{
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+
+  .lamp-switch{
+    appearance: none;
+    border: none;
+    background: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 4px;
+    cursor: pointer;
+    color: var(--ink-dim);
+    flex-shrink: 0;
+  }
+
+  .lamp-switch .bulb{
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--lamp-on);
+    box-shadow: 0 0 10px 2px var(--lamp-on);
+    transition: background .25s ease, box-shadow .25s ease;
+  }
+
+  [data-theme="light"] .lamp-switch .bulb{
+    background: var(--lamp-off);
+    box-shadow: none;
+  }
+
+  .lamp-switch .track{
+    width: 30px;
+    height: 16px;
+    border-radius: 999px;
+    background: var(--panel-raised);
+    border: 1px solid var(--line);
+    position: relative;
+  }
+
+  .lamp-switch .track::after{
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--ink-dim);
+    transition: transform .25s ease, background .25s ease;
+  }
+
+  [data-theme="light"] .lamp-switch .track::after{
+    transform: translateX(14px);
+    background: var(--accent);
+  }
+
+  .lamp-switch .state{
+    font-size: 9px;
+    letter-spacing: .1em;
+  }
+
+
+  .eq-area{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background:
+      linear-gradient(var(--line) 1px, transparent 1px) 0 50% / 100% 28px,
+      var(--bg);
+  }
+
+  .eq-area .placeholder{
+    font-size: 11px;
+    letter-spacing: .1em;
+    color: var(--ink-dim);
+    border: 1px dashed var(--line);
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+
+  .controlbar{
+    position: relative;
+    background: var(--panel);
+    border-top: 1px solid var(--line);
+    padding: 0 14px 18px;
+  }
+
+  .controlbar .bump{
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 132px;
+    height: 40px;
+    background: var(--panel);
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    clip-path: polygon(18% 100%, 0 0, 100% 0, 82% 100%);
+  }
+
+  .knob-row{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 14px;
+    z-index: 1;
+  }
+
+  .knob-btn{
+    appearance: none;
+    border: none;
+    background: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--ink);
+    cursor: pointer;
+    padding: 4px;
+    flex: 1;
+  }
+
+  .knob-btn .knob{
+    --angle: -35deg;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, var(--panel-raised), var(--panel));
+    border: 1px solid var(--line);
+    position: relative;
+    box-shadow: 0 3px 6px var(--shadow), inset 0 0 0 1px rgba(255,255,255,.02);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+
+  .knob-btn:nth-child(2) .knob{
+    width: 56px;
+    height: 56px;
+    --angle: 8deg;
+  }
+
+  .knob-btn .knob::before{
+ 
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    width: 2px;
+    height: 34%;
+    background: var(--accent);
+    border-radius: 2px;
+    transform-origin: bottom center;
+    transform: translateX(-50%) rotate(var(--angle));
+  }
+
+  .knob-btn .knob::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    box-shadow:
+      0 0 0 1px var(--line),
+      0 0 0 5px transparent;
+    transition: box-shadow .2s ease;
+  }
+
+  .knob-btn:hover .knob,
+  .knob-btn:focus-visible .knob{
+    transform: rotate(12deg);
+  }
+
+  .knob-btn:focus-visible .knob::after{
+    box-shadow:
+      0 0 0 1px var(--line),
+      0 0 0 3px var(--accent-dim);
+  }
+
+  .knob-btn:active .knob{
+    transform: rotate(-6deg) scale(.96);
+  }
+
+  .knob-btn .tick{
+    font-size: 10px;
+    letter-spacing: .1em;
+    color: var(--ink-dim);
+  }
+
+  .knob-btn.is-active .tick{
+    color: var(--accent);
+  }
+
+  .knob-btn.is-active .knob::before{
+    background: var(--accent);
+  }
