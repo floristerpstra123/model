@@ -1,4 +1,4 @@
-// ---- dark / light toggle ----
+
   const root = document.body;
   const toggle = document.getElementById('themeToggle');
   const stateLabel = document.getElementById('themeState');
@@ -11,7 +11,7 @@
     stateLabel.textContent = next.toUpperCase();
   });
 
-  // ---- active knob state on the nav buttons ----
+
   const knobButtons = document.querySelectorAll('.knob-btn');
   knobButtons.forEach(btn => {
     btn.addEventListener('click', () => {
