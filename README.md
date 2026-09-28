@@ -52,6 +52,16 @@ Met een grid kun je de lay out aanpassen waardoor je op het hele scherm dingen k
 Welk principe neem je mee in een laatste iteratie van je eigen Garden? 
 gelijkheid.
 
+
+Wat bedoelt Vasilis met de uitspraak: Semantiek doet mij niet zo veel, ik ben liever bezig met de UX van HTML?
+Hij vind de functionaliteit en werking belangrijker
+
+Wat voor type beperkingen hebben invloed op het gebruiken van websites?
+Oogzicht, cognitief, fysieke beperkingen, motorieke skills, gehoor.
+
+Noem drie manieren om door een website te navigeren met jouw screenreader.
+via tap, geluid en de pijltjes.
+
 Deep dives:
 <img width="2968" height="1724" alt="image" src="https://github.com/user-attachments/assets/22ab38da-8166-49bc-a246-a85f5d478339" />
 <img width="3016" height="1726" alt="image" src="https://github.com/user-attachments/assets/b93141db-3ad4-443b-90ff-62846915b2e9" />
