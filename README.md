@@ -14,7 +14,7 @@ Het staat model voor digitale tuintjes welke bij 'Het web is voor iedereen' door
 
 ### 31 aug - Kickoff
 
-Een fork van de model repository gemaakt en gepubliceerd via mijn eigen Github omgeving.
+7 september:
 
 Leg uit wat een digital garden is en waarom dat anders is dan een reguliere website.
 Een digital garden is een website vol met verschillende ideeen en onderwerpen waar je door heen kan kijken die iemand persoonlijk heeft gemaakt.
@@ -25,6 +25,8 @@ Een wbesite is webby als het goed kan worden bestuurd en het scherm word aangepa
 Vertel waar jij mee aan de slag wilt gaan bij het maken van jouw eigen digital garden (let op: dit zijn jouw eerste ideeën, dit kan en mag veranderen in de loop van het programma.
 Ik wil een website maken dat voelt als een interactieve ervaring die de gebruiker vermaakt.
 
+9 September:
+
 Leg uit waar het Visual Research in 3 stappen naartoe werkt
 
 
@@ -33,6 +35,11 @@ Mijn garden gaat over de geschiedenis van elektronische muziek, ik ga veel gebru
 
 Vertel kort welk idee van de Crazy 8 je het liefst zou willen uitvoeren/ verder zou willen onderzoeken.
 
+11 september:
+
+Welke feedback heb je gehad?
+
+14 september:
 
 Leg uit wanneer een website 'lelijk' wordt en geef voorbeelden wat je kan doen om deze 'lelijke' onderdelen te fixen?
 Een website word lelijk als de layout niet klopt vergeleken met je scherm, dit fix je met flexbox, grid.
@@ -43,6 +50,8 @@ Flexbox en grid toepassen.
 Kun je het ontwerp en de bouw van je eigen Garden (zo uit je hoofd) onderbouwen in Webby vocabulair?
 nee
 
+16 september:
+
 Noem 3 Gestalt- of Design principes op en laat de ander uitleggen wat ze betekenen en doen.
 nabijhheid: elementen die dicht bij elkaar staan worden gezien als 1 groep. gelijkheid: Elementen die visueel op elkaar lijken. sluiting: Elementen die in dezelfde richting bewegen.
 
@@ -52,6 +61,26 @@ Met een grid kun je de lay out aanpassen waardoor je op het hele scherm dingen k
 Welk principe neem je mee in een laatste iteratie van je eigen Garden? 
 gelijkheid.
 
+18 september:
+Wat zijn HTML landmark role elements?
+
+Wat zijn heading elementen en hoe horen deze 'genest' te worden?
+
+Hoe ga jij met cookies om? Beschrijf jouw beweegredenen en of die zijn veranderd na het volgen van dit college.
+
+21 september:
+
+Wat is een wireflow en wat heb je er aan?
+Wat zijn dark UX patterns? Geef drie voorbeelden...
+Waar moet je als ontwerper rekening mee houden bij het maken van een human consent component?
+
+23 september: 
+
+Wat is HTML validatie, waarom is het belangrijk en hoe heb je dat vandaag uitgevoerd?
+Welke dingen vielen je op?
+Welke feedback heb je ontvangen tijdens het gesprek met je docenten?
+
+25 september
 
 Wat bedoelt Vasilis met de uitspraak: Semantiek doet mij niet zo veel, ik ben liever bezig met de UX van HTML?
 Hij vind de functionaliteit en werking belangrijker
@@ -61,6 +90,10 @@ Oogzicht, cognitief, fysieke beperkingen, motorieke skills, gehoor.
 
 Noem drie manieren om door een website te navigeren met jouw screenreader.
 via tap, geluid en de pijltjes.
+
+
+
+
 
 Deep dives:
 <img width="2968" height="1724" alt="image" src="https://github.com/user-attachments/assets/22ab38da-8166-49bc-a246-a85f5d478339" />
