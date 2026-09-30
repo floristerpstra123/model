@@ -27,10 +27,24 @@ Mijn garden gaat over de geschiedenis van elektronische muziek, ik ga veel gebru
 Vertel kort welk idee van de Crazy 8 je het liefst zou willen uitvoeren/ verder zou willen onderzoeken.
 iets met dat je naar rechts kan swipen, door de jaren heen bijvoorbeeld.
 
+<img width="854" height="1198" alt="image" src="https://github.com/user-attachments/assets/945e2a14-ab97-4b4f-adc6-5ce82b077eb7" />
+<img width="846" height="744" alt="image" src="https://github.com/user-attachments/assets/b8f8c0c5-cea9-47e9-9937-10faa515f3b6" />
+<img width="968" height="1040" alt="image" src="https://github.com/user-attachments/assets/0ad4411c-f9dc-4e66-b85d-9daa428c04c0" />
+<img width="935" height="674" alt="image" src="https://github.com/user-attachments/assets/34cd8b53-539f-4d7e-9aa5-44ba43780173" />
+
+
+
+
 11 september:
 
 Welke feedback heb je gehad?
 Om voor de geschiedenis pagina voor elk jaartal een ander bijpassend thema te maken.
+
+<img width="1164" height="1360" alt="image" src="https://github.com/user-attachments/assets/e89d5e64-89aa-4c6a-8cbb-9ea900c71c36" />
+<img width="848" height="1416" alt="image" src="https://github.com/user-attachments/assets/98deb4e3-a294-4426-ba66-204a05a7e4e4" />
+<img width="822" height="1349" alt="image" src="https://github.com/user-attachments/assets/5a698d74-76f2-4722-bbd0-838392224b44" />
+
+
 
 14 september:
 
