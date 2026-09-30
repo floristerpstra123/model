@@ -33,11 +33,15 @@ Leg uit waar het Visual Research in 3 stappen naartoe werkt
 Vertel in 2 zinnen waar jouw Garden over gaat, en met welke content je dat gaat doen (beeld, tekst, sound, animatie enz).
 Mijn garden gaat over de geschiedenis van elektronische muziek, ik ga veel gebruik maken van velle kleuren en een donkere achtergrond waardoor er een gevoel van feest en euforie komt. 
 
+
 Vertel kort welk idee van de Crazy 8 je het liefst zou willen uitvoeren/ verder zou willen onderzoeken.
+
+
 
 11 september:
 
 Welke feedback heb je gehad?
+
 
 14 september:
 
@@ -91,8 +95,17 @@ Oogzicht, cognitief, fysieke beperkingen, motorieke skills, gehoor.
 Noem drie manieren om door een website te navigeren met jouw screenreader.
 via tap, geluid en de pijltjes.
 
+30 september 
 
+Waar staat WCAG en A11y voor?
 
+checklist voor je website of het voldoet aan de eisen.
+
+wat vind je lastiger, je laptop alleeneen toetsenbord bedienen of met een screenreader? waarom? waar moet je nog mee oefenen?
+Een screenreader, omdat het gewoon lang duurt en mijn website ook beweging heeft dus is het lastig te bedienen. 
+
+Met welke beperking rekening houden vind je het meest lastig? 
+ALs je het toetsenbord niet kan b esturen.
 
 
 Deep dives:
@@ -109,6 +122,7 @@ Deep dives:
 
 <img width="2440" height="1330" alt="image" src="https://github.com/user-attachments/assets/54ea2bc3-ada8-4113-a8dd-6ab4caef8006" />
 <img width="2432" height="1398" alt="image" src="https://github.com/user-attachments/assets/7d8f9ffa-24f4-42e4-b508-d554b929f186" />
+
 
 
 
