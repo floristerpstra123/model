@@ -32,7 +32,7 @@ iets met dat je naar rechts kan swipen, door de jaren heen bijvoorbeeld.
 <img width="968" height="1040" alt="image" src="https://github.com/user-attachments/assets/0ad4411c-f9dc-4e66-b85d-9daa428c04c0" />
 <img width="935" height="674" alt="image" src="https://github.com/user-attachments/assets/34cd8b53-539f-4d7e-9aa5-44ba43780173" />
 
-
+Mijn idee is om een website te maken die gaat over elektronische muziek en de impact hiervan op de wereld. Kwa vormgeving wil ik een club achtige vibe creeren met velle kleuren, beweging en blur. De website moet energie uitstralen.  
 
 
 11 september:
@@ -44,7 +44,10 @@ Om voor de geschiedenis pagina voor elk jaartal een ander bijpassend thema te ma
 <img width="848" height="1416" alt="image" src="https://github.com/user-attachments/assets/98deb4e3-a294-4426-ba66-204a05a7e4e4" />
 <img width="822" height="1349" alt="image" src="https://github.com/user-attachments/assets/5a698d74-76f2-4722-bbd0-838392224b44" />
 
+<img width="1062" height="1714" alt="image" src="https://github.com/user-attachments/assets/db35d686-eda9-4c5d-bbc2-091511be6ad7" />
+<img width="1512" height="857" alt="Screenshot 2026-09-30 at 17 08 08" src="https://github.com/user-attachments/assets/fea42118-f0fc-4600-8603-f7e3cb6e23c4" />
 
+Mijn eerste ontwerp zag er zo uit, ik had een soort audio equalizer gemaakt, en de knoppen leidde naar de andere paginas. Ik merkte toch dat ik het totaal niet leuk vond en ik voelde me ook helemaal niet verbonden met de website en vormgeving. dus besloot ik om overnieuw te beginnen en meer te werken met de stijl die ik eerder liet zien in het miro bord, dus denk aan neon kleuren en veel beweging.
 
 14 september:
 
