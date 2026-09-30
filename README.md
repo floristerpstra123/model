@@ -4,15 +4,6 @@ Het staat model voor digitale tuintjes welke bij 'Het web is voor iedereen' door
 
 ## Learning Log
 
-### [...]
-
-[...]
-
-### 3 sept - [Workshop]
-
-[...]
-
-### 31 aug - Kickoff
 
 7 september:
 
@@ -33,15 +24,13 @@ Leg uit waar het Visual Research in 3 stappen naartoe werkt
 Vertel in 2 zinnen waar jouw Garden over gaat, en met welke content je dat gaat doen (beeld, tekst, sound, animatie enz).
 Mijn garden gaat over de geschiedenis van elektronische muziek, ik ga veel gebruik maken van velle kleuren en een donkere achtergrond waardoor er een gevoel van feest en euforie komt. 
 
-
 Vertel kort welk idee van de Crazy 8 je het liefst zou willen uitvoeren/ verder zou willen onderzoeken.
-
-
+iets met dat je naar rechts kan swipen, door de jaren heen bijvoorbeeld.
 
 11 september:
 
 Welke feedback heb je gehad?
-
+Om voor de geschiedenis pagina voor elk jaartal een ander bijpassend thema te maken.
 
 14 september:
 
@@ -66,17 +55,32 @@ Welk principe neem je mee in een laatste iteratie van je eigen Garden?
 gelijkheid.
 
 18 september:
+
 Wat zijn HTML landmark role elements?
+Landmark elements geven de belangrijkste delen van een webpagina aan. Voorbeelden zijn <header>, <nav>, <main>, <aside> en <footer>. Ze helpen screenreadergebruikers om snel door een pagina te navigeren.
 
 Wat zijn heading elementen en hoe horen deze 'genest' te worden?
+Headings zijn <h1> tot en met <h6>. Je gebruikt ze in een logische volgorde: een <h1> is de hoofdtitel, <h2> zijn hoofdonderwerpen en <h3> zijn onderdelen daarvan. Je slaat dus liever geen niveau over, zoals direct van <h1> naar <h3>.
 
 Hoe ga jij met cookies om? Beschrijf jouw beweegredenen en of die zijn veranderd na het volgen van dit college.
+Voor dit college accepteerde ik cookies vaak snel zonder echt te kijken waarvoor ze waren. Nu weet ik beter dat cookies gebruikt kunnen worden voor bijvoorbeeld analyse, voorkeuren en gepersonaliseerde advertenties. Daarom let ik nu meer op welke cookies noodzakelijk zijn en kies ik liever voor het weigeren van niet-noodzakelijke trackingcookies. Op mijn eigen website zou ik alleen cookies gebruiken als ze echt nodig zijn.
 
 21 september:
 
 Wat is een wireflow en wat heb je er aan?
+Een wireflow is een combinatie van een wireframe en een flowchart. Het laat zien welke schermen een gebruiker ziet en welke stappen hij of zij doorloopt. Ik kan hiermee controleren of de navigatie en gebruikersroute logisch zijn voordat ik de website volledig ontwerp.
+
 Wat zijn dark UX patterns? Geef drie voorbeelden...
+Dark UX patterns zijn ontwerpkeuzes die gebruikers sturen of misleiden om iets te doen wat vooral gunstig is voor het bedrijf.
+
+Drie voorbeelden zijn:
+
+Confirmshaming: iemand een schuldgevoel geven bij het weigeren van een keuze, zoals: “Nee, ik wil geen betere ervaring.”
+Misdirection: de knop “Accepteren” heel groot en opvallend maken, terwijl “Weigeren” klein of verborgen is.
+Roach motel: het heel makkelijk maken om je aan te melden, maar moeilijk om je weer af te melden of een abonnement op te zeggen.
+
 Waar moet je als ontwerper rekening mee houden bij het maken van een human consent component?
+Bij een consent component moet ik zorgen dat de gebruiker een vrije en duidelijke keuze kan maken. Ik moet helder uitleggen waarvoor toestemming wordt gevraagd, bijvoorbeeld voor analytics of marketingcookies. Accepteren en weigeren moeten even makkelijk en zichtbaar zijn. Ook mag ik geen misleidende teksten, vooraf aangevinkte opties of dark patterns gebruiken.
 
 23 september: 
 
@@ -98,14 +102,13 @@ via tap, geluid en de pijltjes.
 30 september 
 
 Waar staat WCAG en A11y voor?
-
 checklist voor je website of het voldoet aan de eisen.
 
 wat vind je lastiger, je laptop alleeneen toetsenbord bedienen of met een screenreader? waarom? waar moet je nog mee oefenen?
 Een screenreader, omdat het gewoon lang duurt en mijn website ook beweging heeft dus is het lastig te bedienen. 
 
 Met welke beperking rekening houden vind je het meest lastig? 
-ALs je het toetsenbord niet kan b esturen.
+ALs je het toetsenbord niet kan besturen.
 
 
 Deep dives:
@@ -122,6 +125,8 @@ Deep dives:
 
 <img width="2440" height="1330" alt="image" src="https://github.com/user-attachments/assets/54ea2bc3-ada8-4113-a8dd-6ab4caef8006" />
 <img width="2432" height="1398" alt="image" src="https://github.com/user-attachments/assets/7d8f9ffa-24f4-42e4-b508-d554b929f186" />
+
+
 
 
 
