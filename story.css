@@ -4,16 +4,22 @@
 
 body {
   margin: 0;
-  background-color: #121212;
+  background-color: #000000;
   color: #f0f0f0;
-  font-family: "Courier New", monospace;
+  font-family: "Ledlight", Arial, sans-serif; 
 }
 
+@font-face {
+  font-family: "Ledlight";
+  src: url("fonts/LEDLIGHT.otf") format("opentype");
+}
 
 h1 {
   margin: 0;
   padding: 35px 40px 10px;
-  font-size: 2.5rem;
+  font-size: 4rem;
+  color: #00ff1a;
+  
 }
 
 .instructie {
@@ -48,7 +54,7 @@ h1 {
 
 .jaar {
   margin: 0 0 15px;
-  color: #ff9f7f;
+  color: #c000ff;
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -75,7 +81,7 @@ h1 {
 }
 
 .tijdlijn::-webkit-scrollbar-thumb {
-  background-color: #ff9f7f;
+  background-color: #c000ff;
   border-radius: 10px;
 }
 
