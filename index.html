@@ -16,13 +16,36 @@
   <p>THE SYNTHESIZER TURNED ELECTRICITY INTO EMOTION</p>
 </aside>
   <header>
-    <a href="log.html">log</a>
-    <a href="story.html">story</a>
-    <a href="contact.html">contact</a>
+    <a href="contact.html">Who am I?</a>
+    <a href="story.html">History</a>
+    <a href="frequencies.html">FREQUENCIES</a>
+    <a href="https://github.com/floristerpstra123/model/edit/main/README.md">LOG</a>
   </header>
-
+<button id="themeToggle" type="button">LIGHT</button>
   <main>
     <h1>floris Terpstra</h1>
   </main>
+
+<script>
+  const themeToggle = document.querySelector("#themeToggle");
+  const naam = document.querySelector("h1");
+
+  let donkereModus = true;
+
+  themeToggle.addEventListener("click", () => {
+    donkereModus = !donkereModus;
+
+    if (donkereModus) {
+      naam.style.color = "#000000";
+      document.body.removeAttribute("data-theme");
+      themeToggle.textContent = "DAY";
+    } else {
+      naam.style.color = "#ffffff";
+      document.body.setAttribute("data-theme", "light");
+      themeToggle.textContent = "NIGHT";
+    }
+  });
+</script>
 </body>
+
 </html>

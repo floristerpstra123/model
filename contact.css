@@ -1,6 +1,111 @@
+
+@font-face {
+  font-family: "Ledlight";
+  src: url("fonts/LEDLIGHT.otf") format("opentype");
+}
+
 body {
   margin: 0;
   background-color: #000000;
   color: #f0f0f0;
   font-family: "Ledlight", Arial, sans-serif; 
+}
+
+main {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+  align-items: center;
+  gap: 5vw;
+
+  min-height: 100vh;
+  padding: 8rem 8vw 4rem;
+}
+
+#intro {
+  grid-column: 1;
+
+  min-height: 42rem;
+  padding: 3rem;
+
+  border: 2px solid #ffffff;
+  color: #ffffff;
+
+  font-family: "Ledlight", Arial, sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  line-height: 1.45;
+}
+
+#intro p {
+  max-width: 34rem;
+  margin: 0 0 2rem;
+}
+
+#portrait {
+  grid-column: 2;
+  justify-self: end;
+  align-self: end;
+
+  position: relative;
+  z-index: 2;
+
+  width: min(100%, 38rem);
+  max-height: 78vh;
+  object-fit: contain;
+
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+h1 {
+margin: 0;
+  font-family: "Ledlight", Arial, sans-serif;
+  font-size: clamp(2.5rem, 8vw, 7rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+
+}
+
+header {
+  position: fixed;
+  z-index: 3;
+  top: 2rem;
+  right: 2rem;
+  left: auto;
+  bottom: auto;
+
+  display: flex;
+  width: auto;
+  gap: 0.8rem;
+
+  justify-content: flex-start;
+  transform: none;
+}
+header a {
+  position: relative;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ffffff;
+  border-radius: 0;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.45);
+  font-family: "Ledlight", Arial, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+header a:hover {
+  color: #000;
+  background: #ff00cc;
+  border-color: #ff00cc;
+  box-shadow: 0 0 18px #ff00cc;
+  transform: translateY(-3px);
 }

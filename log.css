@@ -1,0 +1,59 @@
+
+body {
+  margin: 0;
+  background-color: #000000;
+  color: #f0f0f0;
+  font-family: "Ledlight", Arial, sans-serif; 
+}
+
+
+
+
+@font-face {
+  font-family: "Ledlight";
+  src: url("fonts/LEDLIGHT.otf") format("opentype");
+}
+
+header {
+  position: fixed;
+  z-index: 3;
+  top: 2rem;
+  right: 2rem;
+  left: auto;
+  bottom: auto;
+
+  display: flex;
+  width: auto;
+  gap: 0.8rem;
+
+  justify-content: flex-start;
+  transform: none;
+}
+header a {
+  position: relative;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ffffff;
+  border-radius: 0;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.45);
+  font-family: "Ledlight", Arial, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+header a:hover {
+  color: #000;
+  background: #ff00cc;
+  border-color: #ff00cc;
+  box-shadow: 0 0 18px #ff00cc;
+  transform: translateY(-3px);
+}
+
+

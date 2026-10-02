@@ -1,6 +1,9 @@
 html,
 body {
   background: #000;
+    margin: 0;
+  width: 100%;
+  min-height: 100vh;
 }
 
 @font-face {
@@ -20,8 +23,8 @@ body::before {
 
   background:
     radial-gradient(circle, #a020f0 0%, transparent 35%),
-    radial-gradient(circle, #00bfa5 0%, transparent 35%),
-    radial-gradient(circle, #008cff 0%, transparent 35%),
+    radial-gradient(circle, #2600bf 0%, transparent 35%),
+    radial-gradient(circle, #ff00cc 0%, transparent 35%),
     radial-gradient(circle, #ff1744 0%, transparent 35%);
 
   background-repeat: no-repeat;
@@ -89,9 +92,9 @@ header a {
 
 header a:hover {
   color: #000;
-  background: #00e5ff;
-  border-color: #00e5ff;
-  box-shadow: 0 0 18px #00e5ff;
+  background: #ff00cc;
+  border-color: #ff00cc;
+  box-shadow: 0 0 18px #ff00cc;
   transform: translateY(-3px);
 }
 main {
@@ -162,7 +165,7 @@ aside p:nth-child(3) {
 
 aside p:nth-child(4) {
   top: 64%;
-  color: #00ff1a;
+  color: #2600bf;
   animation: naarRechts 18s linear infinite;
 }
 
@@ -208,4 +211,31 @@ header {
   width: auto !important;
   transform: none !important;
 }
+
+#themeToggle {
+  position: fixed;
+  z-index: 9999;
+  top: 2rem;
+  left: 2rem;
+
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ffffff;
+  border-radius: 0;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.45);
+
+  font-family: "Ledlight", Arial, sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+body[data-theme="light"] {
+  background: #ffffff;
+}
+
+body[data-theme="light"]::before {
+  background-color: #ffffff;
+}
+
+
 
