@@ -127,6 +127,41 @@ Een screenreader, omdat het gewoon lang duurt en mijn website ook beweging heeft
 Met welke beperking rekening houden vind je het meest lastig? 
 ALs je het toetsenbord niet kan besturen.
 
+sprint 3
+
+5 oktober
+Leg uit wat er met de volgende termen bedoeld wordt: kerning, tracking, leading, flush-left, flush-right, centered, justified, indent, outdent, modular scale, movable type, focus punt, vijf soorten contrast, spatial tension. (Hint, alle termen staan in de artikelen die we samen gelezen hebben)
+Kerning: de ruimte tussen twee specifieke letters aanpassen, bijvoorbeeld tussen de A en V.
+
+Tracking: de ruimte tussen alle letters in een woord of tekstblok gelijkmatig aanpassen.
+Leading: de afstand tussen tekstregels, gemeten van de basislijn van de ene regel tot die van de volgende.
+Flush-left: tekst is links uitgelijnd. De rechterkant heeft een onregelmatige rand.
+Flush-right: tekst is rechts uitgelijnd. De linkerkant heeft een onregelmatige rand.
+Centered: tekst staat gecentreerd rond een middenlijn.
+Justified: tekst is uitgevuld, waardoor de linker- en rechterrand recht zijn. De ruimte tussen woorden wordt hiervoor aangepast.
+Indent: tekst naar binnen laten springen, bijvoorbeeld de eerste regel van een alinea.
+Outdent: tekst naar buiten laten springen ten opzichte van de rest van het tekstblok.
+Modular scale: een reeks maten met een vaste verhouding. Hiermee kun je bijvoorbeeld lettergroottes voor koppen en gewone tekst op elkaar afstemmen.
+Movable type: losse, verplaatsbare drukletters die worden samengesteld tot woorden en pagina’s. Na het drukken kunnen ze opnieuw worden gebruikt.
+Focuspunt: het onderdeel van een ontwerp dat als eerste de aandacht trekt, bijvoorbeeld door kleur, grootte of plaatsing.
+
+Vijf soorten contrast: er zijn verschillende indelingen. Binnen typografie kun je bijvoorbeeld groottecontrast (groot en klein), gewichtscontrast (dik en dun), vormcontrast (rechtop en cursief), structuurcontrast (schreef en schreefloos) en kleurcontrast (verschillende kleuren of licht en donker) onderscheiden.
+
+Spatial tension: visuele spanning door de afstand en positie van elementen. Een element vlak bij de paginarand kan bijvoorbeeld voelen alsof het buiten het ontwerp wil bewegen.
+
+
+Wat is jouw ideale regellengte (measure)? Leg uit waarom.
+
+
+Als je in een ontwerp maar één variabele tot je beschikking had om hiërarchie aan te brengen (grootte, plaatsing, spacing, lettersoorten), welke zou je dan gebruiken en waarom?
+
+7 oktober
+
+Waarom is het goed om een grid in je ontwerp toe te passen? Noem een reden voor de ontwerper en een voor de bezoeker.
+Noem drie manieren om chaos in je ontwerp te voorkomen.
+Hoeveel gekkigheid moet er in je werk zitten?
+
+
 
 Deep dives:
 <img width="2968" height="1724" alt="image" src="https://github.com/user-attachments/assets/22ab38da-8166-49bc-a246-a85f5d478339" />
