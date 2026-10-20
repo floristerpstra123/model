@@ -109,3 +109,28 @@ header a:hover {
   box-shadow: 0 0 18px #ff00cc;
   transform: translateY(-3px);
 }
+
+#themeToggle {
+  position: fixed;
+  z-index: 9999;
+  top: 2rem;
+  left: 2rem;
+
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ffffff;
+  border-radius: 0;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.45);
+
+  font-family: "Ledlight", Arial, sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+body[data-theme="light"] {
+  background: #ffffff;
+}
+
+body[data-theme="light"]::before {
+  background-color: #ffffff;
+}

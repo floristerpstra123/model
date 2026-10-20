@@ -7,6 +7,29 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 
+<details id="consent" open>
+  <summary>PRIVACY NOTICE </summary>
+
+  <h2>ONLY FUNCTIONAL COOKIES</h2>
+
+  <p>
+    This website only uses necessary functional cookies.
+    It does not use analytics or advertising cookies.
+  </p>
+
+  <button type="button" id="consent-close">BEGREPEN</button>
+
+</details>
+
+<script>
+  const notice = document.querySelector("#consent");
+  const button = document.querySelector("#consent-close");
+
+  button.addEventListener("click", () => {
+    notice.hidden = true;
+  });
+</script>
+
 <body>
   <aside aria-hidden="true">
   <p>FROM WAREHOUSES TO DANCEFLOORS — THE SIGNAL SPREADS</p>
@@ -20,8 +43,9 @@
     <a href="story.html">History</a>
     <a href="frequencies.html">FREQUENCIES</a>
     <a href="https://github.com/floristerpstra123/model/edit/main/README.md">LOG</a>
+    <a href="letithappen.html"> Songtekst</a>
   </header>
-<button id="themeToggle" type="button">LIGHT</button>
+<button id="themeToggle" type="button">DAY MODE</button>
   <main>
     <h1>floris Terpstra</h1>
   </main>
@@ -38,14 +62,15 @@
     if (donkereModus) {
       naam.style.color = "#000000";
       document.body.removeAttribute("data-theme");
-      themeToggle.textContent = "DAY";
+      themeToggle.textContent = "DAY MODE";
     } else {
       naam.style.color = "#ffffff";
       document.body.setAttribute("data-theme", "light");
-      themeToggle.textContent = "NIGHT";
+      themeToggle.textContent = "NIGHT MODE";
     }
   });
 </script>
 </body>
 
 </html>
+

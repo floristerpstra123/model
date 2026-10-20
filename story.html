@@ -14,7 +14,7 @@
       <a href="frequencies.html">FREQUENCIES</a>
       <a href="https://github.com/floristerpstra123/model/edit/main/README.md" >log</a>
     </header>
-
+<button id="themeToggle" type="button">DAY MODE</button>
     <h1>The history of electronical music</h1>
 
     <p class="instructie">Swipe or scroll to the right →</p>
@@ -123,5 +123,26 @@
         </p>
       </section>
     </main>
+
+ <script>
+  const themeToggle = document.querySelector("#themeToggle");
+  const naam = document.querySelector("h1");
+
+  let donkereModus = true;
+
+  themeToggle.addEventListener("click", () => {
+    donkereModus = !donkereModus;
+
+    if (donkereModus) {
+      naam.style.color = "#000000";
+      document.body.removeAttribute("data-theme");
+      themeToggle.textContent = "DAY MODE";
+    } else {
+      naam.style.color = "#ffffff";
+      document.body.setAttribute("data-theme", "light");
+      themeToggle.textContent = "NIGHT MODE";
+    }
+  });
+</script>   
   </body>
 </html>
