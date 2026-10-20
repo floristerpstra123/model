@@ -13,6 +13,7 @@
       <a href="index.html">Home</a>
       <a href="frequencies.html">FREQUENCIES</a>
       <a href="https://github.com/floristerpstra123/model/edit/main/README.md" >log</a>
+      <a href="letithappen.html"> Songtekst</a>
     </header>
 <button id="themeToggle" type="button">DAY MODE</button>
     <h1>The history of electronical music</h1>
@@ -124,25 +125,35 @@
       </section>
     </main>
 
- <script>
+<script>
   const themeToggle = document.querySelector("#themeToggle");
-  const naam = document.querySelector("h1");
+  const apparaatThema = window.matchMedia(
+    "(prefers-color-scheme: light)"
+  );
 
-  let donkereModus = true;
+  function isLightMode() {
+    const keuze = document.body.dataset.theme;
+
+    return keuze
+      ? keuze === "light"
+      : apparaatThema.matches;
+  }
+
+  function updateKnop() {
+    themeToggle.textContent =
+      isLightMode() ? "NIGHT MODE" : "DAY MODE";
+  }
 
   themeToggle.addEventListener("click", () => {
-    donkereModus = !donkereModus;
+    document.body.dataset.theme =
+      isLightMode() ? "dark" : "light";
 
-    if (donkereModus) {
-      naam.style.color = "#000000";
-      document.body.removeAttribute("data-theme");
-      themeToggle.textContent = "DAY MODE";
-    } else {
-      naam.style.color = "#ffffff";
-      document.body.setAttribute("data-theme", "light");
-      themeToggle.textContent = "NIGHT MODE";
-    }
+    updateKnop();
   });
-</script>   
+
+  apparaatThema.addEventListener("change", updateKnop);
+
+  updateKnop();
+</script>  
   </body>
 </html>

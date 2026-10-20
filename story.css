@@ -1,12 +1,48 @@
 * {
   box-sizing: border-box;
 }
+:root {
+  color-scheme: dark;
+  --background: #000;
+  --text: #f0f0f0;
+  --muted: #aaa;
+  --title: #00ff1a;
+}
+
+/* Volg de apparaatinstelling */
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --background: #fff;
+    --text: #000;
+    --muted: #555;
+    --title: #006b0b;
+  }
+}
+
+/* Handmatige light mode */
+body[data-theme="light"] {
+  color-scheme: light;
+  --background: #fff;
+  --text: #000;
+  --muted: #555;
+  --title: #006b0b;
+}
+
+/* Handmatige dark mode */
+body[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #000;
+  --text: #f0f0f0;
+  --muted: #aaa;
+  --title: #00ff1a;
+}
 
 body {
   margin: 0;
-  background-color: #000000;
-  color: #f0f0f0;
-  font-family: "Ledlight", Arial, sans-serif; 
+  background-color: var(--background);
+  color: var(--text);
+  font-family: "Ledlight", Arial, sans-serif;
 }
 
 @font-face {
@@ -18,7 +54,7 @@ h1 {
   margin: 0;
   padding: 35px 40px 10px;
   font-size: clamp(2.5rem, 8vw, 7rem);
-  color: #00ff1a;
+color: var(--title);
    font-weight: 400;
   letter-spacing: 0.04em;
   
@@ -27,7 +63,8 @@ h1 {
 .instructie {
   margin: 0;
   padding: 0 40px 25px;
-  color: #aaaaaa;
+color: var(--muted);
+  font-family: Arial, sans-serif;
 }
 
 .tijdlijn {
@@ -43,6 +80,7 @@ h1 {
   scroll-behavior: smooth;
 
   -webkit-overflow-scrolling: touch;
+  
 }
 
 .kaart {
@@ -118,15 +156,15 @@ header {
   gap: 1.5rem;
 
   padding: 2rem 4rem;
-  background-color: black;
+background-color: var(--background);
 }
 header a {
   position: relative;
   padding: 0.6rem 0.8rem;
-  border: 1px solid #ffffff;
+border: 1px solid currentColor;
   border-radius: 0;
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.45);
+  color: var(--text);
+background: var(--background);
   font-family: "Ledlight", Arial, sans-serif;
   font-size: 0.85rem;
   letter-spacing: 0.08em;
@@ -154,22 +192,20 @@ header a:hover {
   left: 2rem;
 
   padding: 0.6rem 0.8rem;
-  border: 1px solid #ffffff;
+ border: 1px solid currentColor;
   border-radius: 0;
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.45);
+  color: var(--text);
+background: var(--background);
 
   font-family: "Ledlight", Arial, sans-serif;
   font-size: 0.85rem;
   cursor: pointer;
 }
 
-body[data-theme="light"] {
-  background: #ffffff;
-}
 
-body[data-theme="light"]::before {
-  background-color: #ffffff;
-}
 
+.kaart h2,
+.kaart p:not(.jaar) {
+  color: var(--text);
+}
 

@@ -4,19 +4,33 @@
   font-display: swap;
 }
 
-body > header {
-  position: relative;
-  z-index: 10;
-}
-
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 :root {
   color-scheme: dark;
-  --background: #000000;
-  --text: #ffffff;
+  --background: #000;
+  --text: #fff;
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --background: #fff;
+    --text: #000;
+  }
+}
+
+body[data-theme="light"] {
+  color-scheme: light;
+  --background: #fff;
+  --text: #000;
+}
+
+body[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #000;
+  --text: #fff;
 }
 
 body {
@@ -26,37 +40,57 @@ body {
   font-family: Arial, sans-serif;
 }
 
-header {
-  padding: 2rem;
-}
 
-nav {
+body > header { padding: 2rem; }
+
+body > header nav {
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
-nav a {
-  padding: 0.7rem 1rem;
+
+:is(body > header a, #themeToggle, #intro-scroll,
+    main > section:not(#frequencies-intro) > a) {
+  display: inline-block;
+  padding: 0.8rem 1rem;
   border: 1px solid currentColor;
+  border-radius: 0;
+  background: transparent;
   color: var(--text);
-  font-family: "Ledlight", Arial, sans-serif;
   text-decoration: none;
-  text-transform: uppercase;
+  font-size: 1rem;
+  cursor: pointer;
   transition: background 0.25s ease, color 0.25s ease;
+
+  &:is(:hover, :focus-visible) {
+    background: #ff00cc;
+    color: #000;
+    border-color: #ff00cc;
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--text);
+    outline-offset: 5px;
+  }
 }
 
-nav a:hover,
-nav a:focus-visible {
-  background: #ff00cc;
-  color: #000000;
+body > header a,
+#themeToggle {
+  font-family: "Ledlight", Arial, sans-serif;
+  text-transform: uppercase;
 }
 
-nav a:focus-visible {
-  outline: 3px solid var(--text);
-  outline-offset: 5px;
+
+#themeToggle {
+  position: absolute;
+  z-index: 100;
+  top: 2rem;
+  left: 2rem;
+  background: var(--background);
 }
+
 
 #frequencies-intro {
   position: relative;
@@ -69,27 +103,33 @@ nav a:focus-visible {
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    inset: 5% 10%;
+    background:
+      radial-gradient(ellipse at 35% 45%, #ff00cc55, transparent 55%),
+      radial-gradient(ellipse at 65% 60%, #7000ff55, transparent 55%);
+    filter: blur(45px);
+    animation: signal-drift 8s ease-in-out infinite alternate;
+  }
 }
 
-
-#frequencies-intro::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 5% 10%;
-  background:
-    radial-gradient(ellipse at 35% 45%, #ff00cc55, transparent 55%),
-    radial-gradient(ellipse at 65% 60%, #7000ff55, transparent 55%);
-  filter: blur(45px);
-  animation: signal-drift 8s ease-in-out infinite alternate;
+#intro-label {
+  margin: 0 0 1.5rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
 }
 
 #intro-title {
   margin: 0;
+  max-width: 100%;
   font-family: "Ledlight", Arial, sans-serif;
   font-weight: 400;
   font-size: clamp(2rem, 8vw, 7rem);
-  max-width: 100%;
   overflow-wrap: anywhere;
 }
 
@@ -106,209 +146,176 @@ nav a:focus-visible {
   line-height: 1.7;
 }
 
-@keyframes signal-drift {
-  0% {
-    transform: translate(-15%, -10%) scale(0.9);
-  }
+#intro-scroll { margin-top: 2rem; }
 
-  50% {
-    transform: translate(10%, 5%) scale(1.2);
-  }
-
-  100% {
-    transform: translate(-5%, 15%) scale(1);
-  }
-}
-
-/* Volg de lichte modus van de MacBook */
-@media (prefers-color-scheme: light) {
-  :root {
-    color-scheme: light;
-    --background: #ffffff;
-    --text: #000000;
-  }
-}
-
-/* Stop beweging als de bezoeker dit heeft ingesteld */
-@media (prefers-reduced-motion: reduce) {
-  #frequencies-intro::before {
-    animation: none;
-  }
-
-  nav a {
-    transition: none;
-  }
-}
 
 #house {
+  --glow-one: #ff006633;
+  --glow-two: #ff880033;
+}
+
+#techno {
+  --glow-one: #0066ff33;
+  --glow-two: #9900ff33;
+}
+
+#electro {
+  --glow-one: #00ff6633;
+  --glow-two: #99ff0033;
+}
+
+#drum-bass {
+  --glow-one: #ffcc0033;
+  --glow-two: #ff660033;
+  --speed: 7s;
+}
+
+#ambient {
+  --glow-one: #44ccff33;
+  --glow-two: #aaaaff33;
+  --speed: 22s;
+}
+
+
+main > section:not(#frequencies-intro) {
   position: relative;
   isolation: isolate;
   overflow: hidden;
   min-height: 100svh;
   padding: clamp(3rem, 7vw, 7rem) clamp(1.5rem, 6vw, 6rem);
-  background: var(--background, #000000);
-  color: var(--text, #ffffff);
+  background: var(--background);
+  color: var(--text);
   border-top: 1px solid currentColor;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 3rem;
   align-content: center;
   scroll-margin-top: 2rem;
-}
 
-/* Warme gradient die uitsluitend bij HOUSE hoort */
-#house::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  pointer-events: none;
-  inset: -15%;
-  background:
-    radial-gradient(ellipse at 25% 45%, #ff006633, transparent 50%),
-    radial-gradient(ellipse at 75% 55%, #ff880033, transparent 50%);
-  filter: blur(40px);
-  animation: house-flow 10s ease-in-out infinite alternate;
-}
-
-#house-heading {
-  grid-column: 1 / -1;
-  position: static;
-  display: block;
-  padding: 0;
-  background: transparent;
-  text-align: left;
-  color: inherit;
-}
-
-#house-label {
-  margin: 0 0 1rem;
-  font: 0.85rem Arial, sans-serif;
-  letter-spacing: 0.18em;
-}
-
-#house-title {
-  margin: 0;
-  font-family: "Ledlight", Arial, sans-serif;
-  font-size: clamp(4rem, 13vw, 10rem);
-  font-weight: 400;
-  line-height: 1.1;
-  color: inherit;
-}
-
-#house-slogan {
-  margin: 1.5rem 0 0;
-  font: 400 clamp(1.3rem, 3vw, 2rem) / 1.4 Arial, sans-serif;
-}
-
-#house article {
-  min-width: 0;
-  padding-top: 1.5rem;
-  border-top: 1px solid currentColor;
-}
-
-#house article h3 {
-  margin: 0 0 1rem;
-  font-family: "Ledlight", Arial, sans-serif;
-  font-weight: 400;
-  font-size: 1.4rem;
-  color: inherit;
-}
-
-#house article p {
-  margin: 0;
-  max-width: 48ch;
-  font: 1.05rem / 1.8 Arial, sans-serif;
-  color: inherit;
-}
-
-#house-closing {
-  grid-column: 1 / -1;
-  margin: 1rem 0 0;
-  font: 0.9rem / 1.6 Arial, sans-serif;
-  letter-spacing: 0.12em;
-}
-
-#house-back {
-  grid-column: 1 / -1;
-  justify-self: start;
-  padding: 0.8rem 1rem;
-  border: 1px solid currentColor;
-  font: 1rem Arial, sans-serif;
-  color: inherit;
-  text-decoration: none;
-}
-
-#house-back:hover,
-#house-back:focus-visible {
-  background: #ff00cc;
-  color: black;
-  border-color: #ff00cc;
-}
-
-#house-back:focus-visible {
-  outline: 3px solid var(--text, white);
-  outline-offset: 5px;
-}
-
-/* Ondersteun ook je bestaande handmatige theme-knop,
-   als die data-theme op de body zet. */
-body[data-theme="light"] #house {
-  --background: white;
-  --text: black;
-}
-
-body[data-theme="dark"] #house {
-  --background: black;
-  --text: white;
-}
-
-@keyframes house-flow {
-  from {
-    transform: translate(-8%, -4%) scale(1);
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    inset: -15%;
+    background:
+      radial-gradient(ellipse at 25% 40%, var(--glow-one, #ff006633), transparent 50%),
+      radial-gradient(ellipse at 75% 60%, var(--glow-two, #ff880033), transparent 50%);
+    filter: blur(40px);
+    animation: genre-drift var(--speed, 10s) ease-in-out infinite alternate;
   }
-  to {
-    transform: translate(8%, 4%) scale(1.12);
+
+  & p {
+    margin: 0;
+    font: 1.05rem / 1.8 Arial, sans-serif;
+    color: inherit;
   }
+
+  & h2, & h3 {
+    margin: 0;
+    font-family: "Ledlight", Arial, sans-serif;
+    font-weight: 400;
+    color: inherit;
+  }
+
+  & > header {
+    grid-column: 1 / -1;
+    position: static;
+    display: block;
+    padding: 0;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+  }
+
+  & > header > p:first-child {
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+  }
+
+  & h2 {
+    font-size: clamp(2.5rem, 10vw, 9rem);
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+  }
+
+  & > header > p:last-child {
+    margin-top: 1.5rem;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    line-height: 1.4;
+  }
+
+  & > article {
+    min-width: 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid currentColor;
+  }
+
+  & h3 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+  }
+
+  & > article > p { max-width: 48ch; }
+
+  & > p, & > a { grid-column: 1 / -1; }
+
+  & > p {
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+  }
+
+  & > a { justify-self: start; }
 }
 
+#drum-bass h2 { font-size: clamp(2rem, 7vw, 7rem); }
+
+/* ANIMATIES */
+@keyframes signal-drift {
+  0% { transform: translate(-15%, -10%) scale(0.9); }
+  50% { transform: translate(10%, 5%) scale(1.2); }
+  100% { transform: translate(-5%, 15%) scale(1); }
+}
+
+@keyframes genre-drift {
+  from { transform: translate(-8%, -4%) scale(1); }
+  to { transform: translate(8%, 4%) scale(1.12); }
+}
+
+/* MOBIEL */
 @media (max-width: 750px) {
-  #house {
+  main > section:not(#frequencies-intro) {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+
+  body > header { padding: 1rem; }
+
+  body:has(#themeToggle) > header { padding-top: 5.5rem; }
+
+  #themeToggle {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+}
+
+/* TOEGANKELIJKE BEWEGING */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #house::before {
+  #frequencies-intro::before,
+  main > section:not(#frequencies-intro)::before {
     animation: none;
   }
-}
 
-#intro-scroll {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 0.8rem 1rem;
-  border: 1px solid currentColor;
-  color: var(--text, white);
-  font: 1rem Arial, sans-serif;
-  text-decoration: none;
-}
-
-#intro-scroll:hover,
-#intro-scroll:focus-visible {
-  background: #ff00cc;
-  color: black;
-  border-color: #ff00cc;
-}
-
-#intro-scroll:focus-visible {
-  outline: 3px solid var(--text, white);
-  outline-offset: 5px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
+  :is(body > header a, #themeToggle, #intro-scroll,
+      main > section:not(#frequencies-intro) > a) {
+    transition: none;
   }
 }
+
 
