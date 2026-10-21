@@ -100,7 +100,7 @@ body > header a {
   letter-spacing: 0.08em;
 }
 
-/* Dezelfde grootte als op HOME */
+
 body > header a,
 #themeToggle {
   padding: 0.6rem 0.8rem;
@@ -109,7 +109,7 @@ body > header a,
   line-height: normal;
 }
 
-/* Dezelfde letterafstand als de HOME-navigatie */
+
 body > header a {
   letter-spacing: 0.08em;
 }
@@ -305,7 +305,7 @@ main > section:not(#frequencies-intro) {
 
 #drum-bass h2 { font-size: clamp(2rem, 7vw, 7rem); }
 
-/* ANIMATIES */
+
 @keyframes signal-drift {
   0% { transform: translate(-15%, -10%) scale(0.9); }
   50% { transform: translate(10%, 5%) scale(1.2); }
@@ -317,7 +317,7 @@ main > section:not(#frequencies-intro) {
   to { transform: translate(8%, 4%) scale(1.12); }
 }
 
-/* MOBIEL */
+
 @media (max-width: 750px) {
   main > section:not(#frequencies-intro) {
     grid-template-columns: 1fr;
@@ -335,7 +335,7 @@ main > section:not(#frequencies-intro) {
   }
 }
 
-/* TOEGANKELIJKE BEWEGING */
+
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
 }
@@ -367,7 +367,7 @@ main > section:not(#frequencies-intro) {
   }
 }
 
-/* Uitlegtekstjes binnen de pagina */
+
 main p {
   font-family: "FakeReceipt", Arial, sans-serif;
   font-weight: 400;

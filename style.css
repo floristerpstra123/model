@@ -253,7 +253,7 @@ header {
   display: none;
 }
 
-/* Dichtgeklapt: kleinere box */
+
 #consent {
   width: fit-content;
   max-width: calc(100% - 2rem);
@@ -264,7 +264,7 @@ header {
   padding: 0;
 }
 
-/* Opengeklapt: meer ruimte voor de tekst */
+
 #consent[open] {
   width: min(30rem, calc(100% - 2rem));
   padding: 1.5rem;
@@ -295,14 +295,13 @@ header {
     transform 0.25s ease;
 }
 
-/* Standaard dark mode */
+
 :root {
   color-scheme: dark;
   --background: #000;
   --text: #fff;
 }
 
-/* Volg de apparaatinstelling */
 @media (prefers-color-scheme: light) {
   :root {
     color-scheme: light;
@@ -311,7 +310,7 @@ header {
   }
 }
 
-/* Handmatige keuze via de knop */
+
 body[data-theme="light"] {
   color-scheme: light;
   --background: #fff;
@@ -324,23 +323,23 @@ body[data-theme="dark"] {
   --text: #fff;
 }
 
-/* Achtergrond en gewone tekst */
+
 body {
   background: var(--background);
   color: var(--text);
 }
 
-/* Behoud de bestaande gradients */
+
 body::before {
   background-color: var(--background);
 }
 
-/* Je naam */
+
 main h1 {
   color: var(--text);
 }
 
-/* Navigatie, theme-knop en privacy notice */
+
 header a,
 #themeToggle,
 #consent,
@@ -356,7 +355,7 @@ header a,
   color: inherit;
 }
 
-/* Roze hover */
+
 header a:hover,
 header a:focus-visible,
 #themeToggle:hover,
