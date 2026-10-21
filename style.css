@@ -230,13 +230,6 @@ header {
   cursor: pointer;
 }
 
-body[data-theme="light"] {
-  background: #ffffff;
-}
-
-body[data-theme="light"]::before {
-  background-color: #ffffff;
-}
 
 #consent {
   position: fixed;
@@ -302,15 +295,77 @@ body[data-theme="light"]::before {
     transform 0.25s ease;
 }
 
+/* Standaard dark mode */
+:root {
+  color-scheme: dark;
+  --background: #000;
+  --text: #fff;
+}
+
+/* Volg de apparaatinstelling */
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --background: #fff;
+    --text: #000;
+  }
+}
+
+/* Handmatige keuze via de knop */
+body[data-theme="light"] {
+  color-scheme: light;
+  --background: #fff;
+  --text: #000;
+}
+
+body[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #000;
+  --text: #fff;
+}
+
+/* Achtergrond en gewone tekst */
+body {
+  background: var(--background);
+  color: var(--text);
+}
+
+/* Behoud de bestaande gradients */
+body::before {
+  background-color: var(--background);
+}
+
+/* Je naam */
+main h1 {
+  color: var(--text);
+}
+
+/* Navigatie, theme-knop en privacy notice */
+header a,
+#themeToggle,
+#consent,
+#consent button {
+  background: var(--background);
+  color: var(--text);
+  border-color: var(--text);
+}
+
+#consent summary,
+#consent h2,
+#consent p {
+  color: inherit;
+}
+
+/* Roze hover */
 header a:hover,
 header a:focus-visible,
 #themeToggle:hover,
-#themeToggle:focus-visible {
-  color: #000;
+#themeToggle:focus-visible,
+#consent button:hover {
   background: #ff00cc;
+  color: #000;
   border-color: #ff00cc;
-  box-shadow: 0 0 18px #ff00cc;
-  transform: translateY(-3px);
 }
+
 
 

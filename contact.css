@@ -61,6 +61,7 @@ main {
 
 h1 {
 margin: 0;
+color: var(--text);
   font-family: "Ledlight", Arial, sans-serif;
   font-size: clamp(2.5rem, 8vw, 7rem);
   font-weight: 400;
@@ -127,10 +128,147 @@ header a:hover {
   cursor: pointer;
 }
 
-body[data-theme="light"] {
-  background: #ffffff;
+/* Standaard dark mode */
+:root {
+  color-scheme: dark;
+  --background: #000;
+  --text: #f0f0f0;
 }
 
-body[data-theme="light"]::before {
-  background-color: #ffffff;
+/* Apparaatvoorkeur */
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --background: #fff;
+    --text: #000;
+  }
+}
+
+/* Handmatige keuze */
+body[data-theme="light"] {
+  color-scheme: light;
+  --background: #fff;
+  --text: #000;
+}
+
+body[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #000;
+  --text: #f0f0f0;
+}
+
+/* Pagina */
+body {
+  background: var(--background);
+  color: var(--text);
+}
+
+/* Introductietekst en rand */
+#intro {
+  color: var(--text);
+  border-color: var(--text);
+}
+
+#intro p {
+  color: inherit;
+}
+
+/* Navigatie en theme-knop */
+header a,
+#themeToggle {
+  background: var(--background);
+  color: var(--text);
+  border-color: var(--text);
+}
+
+/* Roze glowing hover */
+header a:hover,
+header a:focus-visible,
+#themeToggle:hover,
+#themeToggle:focus-visible {
+  background: #ff00cc;
+  color: #000;
+  border-color: #ff00cc;
+  box-shadow: 0 0 18px #ff00cc;
+}
+
+/* Padding en borders tellen mee binnen de breedte */
+* {
+  box-sizing: border-box;
+}
+
+/* Titel boven beide kolommen */
+main > h1 {
+  grid-column: 1 / -1;
+}
+
+/* Telefoon en kleinere schermen */
+@media (max-width: 1000px) {
+  /* Theme-knop bovenaan */
+  #themeToggle {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+
+  /* Navigatie onder de theme-knop, zonder overlap */
+  body > header {
+    position: static;
+    width: 100%;
+    padding: 5rem 1rem 1rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.6rem;
+  }
+
+  body > header a {
+    display: inline-block;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  /* Eén kolom: titel, tekst en daarna foto */
+  main {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: auto;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  main > h1 {
+    grid-column: 1;
+    font-size: clamp(2.5rem, 10vw, 4rem);
+    overflow-wrap: anywhere;
+  }
+
+  #intro {
+    grid-column: 1;
+    min-width: 0;
+    min-height: auto;
+    padding: 1.5rem;
+
+    font-size: 1rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+
+  #intro p {
+    max-width: 100%;
+  }
+
+  #intro p:last-child {
+    margin-bottom: 0;
+  }
+
+  #portrait {
+    grid-column: 1;
+    justify-self: center;
+    align-self: center;
+
+    width: min(100%, 24rem);
+    height: auto;
+    max-height: none;
+  }
 }

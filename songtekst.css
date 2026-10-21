@@ -1,0 +1,89 @@
+/* MARK: fonts */
+@font-face {
+  font-family: 'Seraphs';
+  src: url('font/SeraphsVF.woff2') format('woff2'), /* Modern Browsers */
+}
+/* MARK: items */
+body{
+  font-family: 'Seraphs';
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+main {
+  min-height: 100svh;
+  padding: 3vw;
+}
+
+ol {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-template-rows: repeat(8, auto);
+  align-items: center;
+
+  min-height: 90svh;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+li:nth-child(1) {
+  grid-area: 8 / 1;
+  font-size: 3vw;
+  color: #2c2c2c;
+}
+
+li:nth-child(2) {
+  grid-area: 7 / 2;
+  font-size: 3.5vw;
+  color: #545353;
+}
+
+li:nth-child(3) {
+  grid-area: 6 / 3;
+  font-size: 4vw;
+}
+
+li:nth-child(4) {
+  grid-area: 5 / 4;
+  font-size: 4.5vw;
+}
+
+li:nth-child(5) {
+  grid-area: 4 / 5;
+  font-size: 5.5vw;
+}
+
+li:nth-child(6) {
+  grid-area: 3 / 5 / 4 / 8;
+  justify-self: center;
+  font-size: 6.5vw;
+}
+
+li:nth-child(7) {
+  grid-area: 2 / 6;
+  font-size: 8vw;
+}
+
+li:nth-child(8) {
+  grid-area: 1 / 5 / 2 / 9;
+  justify-self: end;
+  font-size: 11vw;
+  font-style: italic;
+  color: yellow;
+}

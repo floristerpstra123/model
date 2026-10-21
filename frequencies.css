@@ -4,6 +4,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "FakeReceipt";
+  src: url("fonts/Fake Receipt.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 * { box-sizing: border-box; }
 
 :root {
@@ -54,21 +62,22 @@ body > header nav {
 :is(body > header a, #themeToggle, #intro-scroll,
     main > section:not(#frequencies-intro) > a) {
   display: inline-block;
-  padding: 0.8rem 1rem;
+  padding: var(--button-padding, 0.8rem 1rem);
   border: 1px solid currentColor;
   border-radius: 0;
   background: transparent;
   color: var(--text);
   text-decoration: none;
-  font-size: 1rem;
+  font-size: var(--button-font-size, 1rem);
   cursor: pointer;
   transition: background 0.25s ease, color 0.25s ease;
 
-  &:is(:hover, :focus-visible) {
-    background: #ff00cc;
-    color: #000;
-    border-color: #ff00cc;
-  }
+&:is(:hover, :focus-visible) {
+  background: #ff00cc;
+  color: #000;
+  border-color: #ff00cc;
+  box-shadow: 0 0 18px 4px #ff00cc;
+}
 
   &:focus-visible {
     outline: 3px solid var(--text);
@@ -78,10 +87,32 @@ body > header nav {
 
 body > header a,
 #themeToggle {
+  --button-padding: 0.6rem 0.8rem;
+  --button-font-size: 0.85rem;
+
   font-family: "Ledlight", Arial, sans-serif;
+  font-weight: 400;
+  line-height: normal;
   text-transform: uppercase;
 }
 
+body > header a {
+  letter-spacing: 0.08em;
+}
+
+/* Dezelfde grootte als op HOME */
+body > header a,
+#themeToggle {
+  padding: 0.6rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* Dezelfde letterafstand als de HOME-navigatie */
+body > header a {
+  letter-spacing: 0.08em;
+}
 
 #themeToggle {
   position: absolute;
@@ -206,10 +237,13 @@ main > section:not(#frequencies-intro) {
   }
 
   & p {
-    margin: 0;
-    font: 1.05rem / 1.8 Arial, sans-serif;
-    color: inherit;
-  }
+  margin: 0;
+  font-family: "FakeReceipt", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: inherit;
+}
 
   & h2, & h3 {
     margin: 0;
@@ -318,4 +352,23 @@ main > section:not(#frequencies-intro) {
   }
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  :is(body > header a, #themeToggle) {
+    transition:
+      color 0.25s ease,
+      background 0.25s ease,
+      border-color 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.25s ease;
+  }
 
+  :is(body > header a, #themeToggle):is(:hover, :focus-visible) {
+    transform: translateY(-3px);
+  }
+}
+
+/* Uitlegtekstjes binnen de pagina */
+main p {
+  font-family: "FakeReceipt", Arial, sans-serif;
+  font-weight: 400;
+}
