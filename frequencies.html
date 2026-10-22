@@ -228,36 +228,43 @@
         <a href="#frequencies-intro">Back ↑</a>
       </section>
     </main>
-    <script>
-      const themeButton = document.getElementById("themeToggle");
+ <script>
+  const themeButton = document.getElementById("themeToggle");
+  const apparaatThema = window.matchMedia(
+    "(prefers-color-scheme: light)"
+  );
 
-      const savedTheme = localStorage.getItem("theme");
+  const savedTheme = localStorage.getItem("theme");
 
-      const systemTheme = window.matchMedia("(prefers-color-scheme: light)")
-        .matches
-        ? "light"
-        : "dark";
+  let currentTheme =
+    savedTheme === "light" || savedTheme === "dark"
+      ? savedTheme
+      : apparaatThema.matches ? "light" : "dark";
 
-      let currentTheme =
-        savedTheme === "light" || savedTheme === "dark"
-          ? savedTheme
-          : systemTheme;
+  function applyTheme() {
+    document.body.dataset.theme = currentTheme;
 
-      function applyTheme() {
-        document.body.dataset.theme = currentTheme;
+    themeButton.textContent =
+      currentTheme === "dark" ? "DAY MODE" : "NIGHT MODE";
+  }
 
-        themeButton.textContent =
-          currentTheme === "dark" ? "DAY MODE" : "NIGHT MODE";
-      }
+  applyTheme();
 
-      applyTheme();
+  // Handmatig wisselen via de knop.
+  themeButton.addEventListener("click", () => {
+    currentTheme = currentTheme === "dark" ? "light" : "dark";
 
-      themeButton.addEventListener("click", function () {
-        currentTheme = currentTheme === "dark" ? "light" : "dark";
+    localStorage.setItem("theme", currentTheme);
+    applyTheme();
+  });
 
-        localStorage.setItem("theme", currentTheme);
-        applyTheme();
-      });
-    </script>
+  // Direct meeveranderen met je MacBook-instelling.
+  apparaatThema.addEventListener("change", () => {
+    localStorage.removeItem("theme");
+
+    currentTheme = apparaatThema.matches ? "light" : "dark";
+    applyTheme();
+  });
+</script>
   </body>
 </html>
