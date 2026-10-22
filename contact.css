@@ -1,7 +1,9 @@
-
 @font-face {
   font-family: "Ledlight";
   src: url("fonts/LEDLIGHT.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -12,38 +14,127 @@
   font-display: swap;
 }
 
+:root {
+  color-scheme: dark;
+  --background: #000;
+  --text: #f0f0f0;
+  --portrait-blend: screen;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --background: #fff;
+    --text: #000;
+    --portrait-blend: multiply;
+  }
+}
+
+body[data-theme="light"] {
+  color-scheme: light;
+  --background: #fff;
+  --text: #000;
+  --portrait-blend: multiply;
+}
+
+body[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #000;
+  --text: #f0f0f0;
+  --portrait-blend: screen;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  background-color: #000000;
-  color: #f0f0f0;
-  font-family: "Ledlight", Arial, sans-serif; 
+  background: var(--background);
+  color: var(--text);
+  font-family: "AlteHaasGrotesk", Arial, sans-serif;
+}
+
+body > header {
+  position: fixed;
+  z-index: 10;
+  top: 2rem;
+  right: 2rem;
+}
+
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+header a,
+#themeToggle {
+  display: inline-block;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid currentColor;
+  border-radius: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: "Ledlight", Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+#themeToggle {
+  position: fixed;
+  z-index: 10;
+  top: 2rem;
+  left: 2rem;
+}
+
+header a:hover,
+header a:focus-visible,
+header a[aria-current="page"],
+#themeToggle:hover,
+#themeToggle:focus-visible {
+  background: #ff00cc;
+  color: #000;
+  border-color: #ff00cc;
+  box-shadow: 0 0 18px 4px #ff00cc;
 }
 
 main {
-  position: relative;
-  z-index: 2;
-
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
   align-items: center;
   gap: 5vw;
-
   min-height: 100vh;
   padding: 8rem 8vw 4rem;
+  scroll-margin-top: 7rem;
+}
+
+h1 {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-family: "Ledlight", Arial, sans-serif;
+  font-size: clamp(2.5rem, 8vw, 7rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  overflow-wrap: anywhere;
 }
 
 #intro {
   grid-column: 1;
-
+  min-width: 0;
   min-height: 42rem;
   padding: 3rem;
-
-  border: 2px solid #ffffff;
-  color: #ffffff;
-
-  font-family: "Ledlight", Arial, sans-serif;
+  border: 2px solid currentColor;
   font-size: clamp(1rem, 1.5vw, 1.5rem);
-  line-height: 1.45;
+  line-height: 1.6;
 }
 
 #intro p {
@@ -51,214 +142,81 @@ main {
   margin: 0 0 2rem;
 }
 
+#intro p:last-child {
+  margin-bottom: 0;
+}
+
 #portrait {
   grid-column: 2;
   justify-self: end;
   align-self: end;
-
-  position: relative;
-  z-index: 2;
-
   width: min(100%, 38rem);
+  height: auto;
   max-height: 78vh;
   object-fit: contain;
-
-  mix-blend-mode: screen;
-  pointer-events: none;
+  mix-blend-mode: var(--portrait-blend);
 }
 
-h1 {
-margin: 0;
-color: var(--text);
-  font-family: "Ledlight", Arial, sans-serif;
-  font-size: clamp(2.5rem, 8vw, 7rem);
-  font-weight: 400;
-  letter-spacing: 0.04em;
-
-}
-
-header {
+#skip-link {
   position: fixed;
-  z-index: 3;
-  top: 2rem;
-  right: 2rem;
-  left: auto;
-  bottom: auto;
-
-  display: flex;
-  width: auto;
-  gap: 0.8rem;
-
-  justify-content: flex-start;
-  transform: none;
-}
-header a {
-  position: relative;
-  padding: 0.6rem 0.8rem;
-  border: 1px solid #ffffff;
-  border-radius: 0;
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.45);
-  font-family: "Ledlight", Arial, sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition:
-    color 0.25s ease,
-    background 0.25s ease,
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
-}
-
-header a:hover {
-  color: #000;
-  background: #ff00cc;
-  border-color: #ff00cc;
-  box-shadow: 0 0 18px #ff00cc;
-  transform: translateY(-3px);
-}
-
-#themeToggle {
-  position: fixed;
-  z-index: 9999;
-  top: 2rem;
-  left: 2rem;
-
-  padding: 0.6rem 0.8rem;
-  border: 1px solid #ffffff;
-  border-radius: 0;
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.45);
-
-  font-family: "Ledlight", Arial, sans-serif;
-  font-size: 0.85rem;
-  cursor: pointer;
-}
-
-/* Standaard dark mode */
-:root {
-  color-scheme: dark;
-  --background: #000;
-  --text: #f0f0f0;
-}
-
-/* Apparaatvoorkeur */
-@media (prefers-color-scheme: light) {
-  :root {
-    color-scheme: light;
-    --background: #fff;
-    --text: #000;
-  }
-}
-
-/* Handmatige keuze */
-body[data-theme="light"] {
-  color-scheme: light;
-  --background: #fff;
-  --text: #000;
-}
-
-body[data-theme="dark"] {
-  color-scheme: dark;
-  --background: #000;
-  --text: #f0f0f0;
-}
-
-/* Pagina */
-body {
+  z-index: 20;
+  top: 1rem;
+  left: 1rem;
+  padding: 1rem;
+  border: 2px solid currentColor;
   background: var(--background);
   color: var(--text);
+  transform: translateY(-200%);
 }
 
-/* Introductietekst en rand */
-#intro {
-  color: var(--text);
-  border-color: var(--text);
+#skip-link:focus {
+  transform: translateY(0);
 }
 
-#intro p {
-  color: inherit;
+a:focus-visible,
+button:focus-visible,
+main:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 5px;
 }
 
-/* Navigatie en theme-knop */
-header a,
-#themeToggle {
-  background: var(--background);
-  color: var(--text);
-  border-color: var(--text);
-}
-
-/* Roze glowing hover */
-header a:hover,
-header a:focus-visible,
-#themeToggle:hover,
-#themeToggle:focus-visible {
-  background: #ff00cc;
-  color: #000;
-  border-color: #ff00cc;
-  box-shadow: 0 0 18px #ff00cc;
-}
-
-/* Padding en borders tellen mee binnen de breedte */
-* {
-  box-sizing: border-box;
-}
-
-/* Titel boven beide kolommen */
-main > h1 {
-  grid-column: 1 / -1;
-}
-
-/* Telefoon en kleinere schermen */
-@media (max-width: 1000px) {
-  /* Theme-knop bovenaan */
+@media (max-width: 1200px) {
   #themeToggle {
     position: absolute;
     top: 1rem;
     left: 1rem;
   }
 
-  /* Navigatie onder de theme-knop, zonder overlap */
   body > header {
     position: static;
-    width: 100%;
     padding: 5rem 1rem 1rem;
+  }
 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+  header nav {
     gap: 0.6rem;
   }
 
-  body > header a {
-    display: inline-block;
+  header a {
     max-width: 100%;
     overflow-wrap: anywhere;
   }
 
-  /* Eén kolom: titel, tekst en daarna foto */
   main {
     grid-template-columns: minmax(0, 1fr);
     min-height: auto;
     padding: 2rem 1rem;
     gap: 2rem;
+    scroll-margin-top: 1rem;
   }
 
-  main > h1 {
-    grid-column: 1;
+  h1 {
     font-size: clamp(2.5rem, 10vw, 4rem);
-    overflow-wrap: anywhere;
   }
 
   #intro {
-    grid-column: 1;
-    min-width: 0;
     min-height: auto;
     padding: 1.5rem;
-
     font-size: 1rem;
-    line-height: 1.6;
     overflow-wrap: anywhere;
   }
 
@@ -266,25 +224,17 @@ main > h1 {
     max-width: 100%;
   }
 
-  #intro p:last-child {
-    margin-bottom: 0;
-  }
-
   #portrait {
     grid-column: 1;
     justify-self: center;
-    align-self: center;
-
     width: min(100%, 24rem);
-    height: auto;
     max-height: none;
   }
 }
 
-body > header a[aria-current="page"] {
-  background: #ff00cc;
-  color: #000;
-  border-color: #ff00cc;
-  box-shadow: 0 0 18px 4px #ff00cc;
+@media (prefers-reduced-motion: reduce) {
+  header a,
+  #themeToggle {
+    transition: none;
+  }
 }
-

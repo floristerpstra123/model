@@ -1,71 +1,81 @@
 <!doctype html>
-<html lang="nl">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact — Floris Terpstra</title>
+  <title>Who am I — Floris Terpstra</title>
   <link rel="stylesheet" href="contact.css">
 </head>
-
 <body>
+  <a id="skip-link" href="#inhoud">Skip to content</a>
 
-  
+  <button id="themeToggle" type="button">DAY MODE</button>
+
   <header>
-
- <a href="index.html">Home</a>
- <a href="contact.html" aria-current="page">Who am I</a>
-    <a href="story.html">History</a>
-    <a href="frequencies.html">FREQUENCIES</a>
-    <a href="https://github.com/floristerpstra123/model/edit/main/README.md">log</a>
-    <a href="letithappen.html"> Songtekst</a>
-
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="contact.html" aria-current="page">Who am I</a>
+      <a href="story.html">History</a>
+      <a href="frequencies.html">Frequencies</a>
+      <a href="https://github.com/floristerpstra123/model/edit/main/README.md">Log</a>
+      <a href="letithappen.html">Songtekst</a>
+    </nav>
   </header>
-<button id="themeToggle" type="button">DAY MODE</button>
-  <main>
-    <h1>Who am I</h1>
-    <section id="intro">
-    <p>MY NAME IS FLORIS TERPSTRA.</p>
 
-    <p>
-      I AM INTERESTED IN THE CULTURE, HISTORY AND VISUAL LANGUAGE
-      OF ELECTRONIC MUSIC. TO ME, ELECTRONIC MUSIC IS A SHARED LANGUAGE.
+  <main id="inhoud" tabindex="-1" aria-labelledby="pagina-titel">
+    <h1 id="pagina-titel">Who am I</h1>
 
-IT CONNECTS TECHNOLOGY, HISTORY, DESIGN AND PEOPLE ON THE
-DANCEFLOOR. ITS INFLUENCE CAN BE HEARD FAR BEYOND CLUB MUSIC:
-IN POP, HIP-HOP, FILM, GAMES AND THE SOUNDS WE HEAR EVERY DAY.
+    <section id="intro" aria-label="About Floris Terpstra">
+      <p>My name is Floris Terpstra.</p>
 
-THIS WEBSITE EXPLORES WHERE THAT LANGUAGE CAME FROM, AND HOW IT
-CONTINUES TO SHAPE THE MUSIC OF TODAY.
-    </p>
+      <p>
+        I am interested in the culture, history and visual language of
+        electronic music. To me, electronic music is a shared language.
+      </p>
 
+      <p>
+        It connects technology, history, design and people on the dancefloor.
+        Its influence can be heard far beyond club music: in pop, hip-hop,
+        film, games and the sounds we hear every day.
+      </p>
+
+      <p>
+        This website explores where that language came from, and how it
+        continues to shape the music of today.
+      </p>
     </section>
 
-<img
-  id="portrait"
-  src="images/pasted-image-halftone.png"
-  alt="Halftone portret van Floris Terpstra"
->
+    <img
+      id="portrait"
+      src="images/pasted-image-halftone.png"
+      alt="Halftone portrait of Floris Terpstra"
+    >
   </main>
-  
+
   <script>
-  const themeToggle = document.querySelector("#themeToggle");
-  const naam = document.querySelector("h1");
+    const themeButton = document.querySelector("#themeToggle");
+    const systemTheme = window.matchMedia("(prefers-color-scheme: light)");
 
-  let donkereModus = true;
-
-  themeToggle.addEventListener("click", () => {
-    donkereModus = !donkereModus;
-
-    if (donkereModus) {
-     
-      document.body.removeAttribute("data-theme");
-      themeToggle.textContent = "DAY MODE";
-    } else {
-      
-      document.body.setAttribute("data-theme", "light");
-      themeToggle.textContent = "NIGHT MODE";
+    function isLightMode() {
+      const choice = document.body.dataset.theme;
+      return choice ? choice === "light" : systemTheme.matches;
     }
-  });
-</script>
+
+    function updateButton() {
+      themeButton.textContent = isLightMode() ? "NIGHT MODE" : "DAY MODE";
+    }
+
+    themeButton.addEventListener("click", () => {
+      document.body.dataset.theme = isLightMode() ? "dark" : "light";
+      updateButton();
+    });
+
+    systemTheme.addEventListener("change", () => {
+      document.body.removeAttribute("data-theme");
+      updateButton();
+    });
+
+    updateButton();
+  </script>
 </body>
 </html>
