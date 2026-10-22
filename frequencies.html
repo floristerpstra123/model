@@ -11,8 +11,10 @@
     <header>
       <nav aria-label="Main navigation">
         <a href="index.html">Home</a>
+         <a href="contact.html">Who am I?</a>
         <a href="story.html">History</a>
-        <a href="contact.html">Who am I?</a>
+        <a href="frequencies.html" aria-current="page">FREQUENCIES</a>
+        <a href="https://github.com/floristerpstra123/model/edit/main/README.md">LOG</a>
         <a href="letithappen.html"> Songtekst</a>
       </nav>
     </header>
@@ -20,14 +22,12 @@
     <main>
       <section id="frequencies-intro" aria-labelledby="intro-title">
         <h1 id="intro-title">FREQUENCIES</h1>
-        <h2 id="intro-subtitle">
-          Different frequencies.<br />A shared language.
-        </h2>
+        
         <p id="intro-description">
           Every genre has its own rhythm, atmosphere and roots. Follow the
-          signal through the sounds that bring people together. scroll down
+          signal through the sounds that bring people together.
         </p>
-        <a id="intro-scroll" href="#house">EXPLORE</a>
+        <a id="intro-scroll" href="#house">Explore</a>
       </section>
 
       <section id="house" aria-labelledby="house-title">
@@ -67,7 +67,7 @@
         </article>
 
         <p id="house-closing">DIFFERENT PEOPLE, DANCING TO THE SAME BEAT</p>
-        <a id="house-back" href="#frequencies-intro">Back to the signal ↑</a>
+        <a id="house-back" href="#techno">Techno ↓</a>
       </section>
 
       <section id="techno" aria-labelledby="techno-title">
@@ -107,7 +107,7 @@
         </article>
 
         <p id="techno-closing">HUMAN ENERGY. ELECTRONIC PULSE.</p>
-        <a id="techno-back" href="#house">Back to House ↑</a>
+        <a id="techno-back" href="#electro">Electro ↓</a>
       </section>
 
       <section id="electro" aria-labelledby="electro-title">
@@ -146,7 +146,7 @@
         </article>
 
         <p id="electro-closing">BROKEN BEATS. CONNECTED PEOPLE.</p>
-        <a id="electro-back" href="#techno">Back to Techno ↑</a>
+        <a id="electro-back" href="#drum-bass">Next genre: Drum &amp; Bass ↓</a>
       </section>
 
       <section id="drum-bass" aria-labelledby="drum-bass-title">
@@ -185,11 +185,12 @@
         </article>
 
         <p>FAST BEATS. A SHARED PULSE.</p>
-        <a href="#electro">Back to Electro ↑</a>
+        <a href="#ambient">Ambient ↓</a>
       </section>
 
       <section id="ambient" aria-labelledby="ambient-title">
         <header>
+
           <h2 id="ambient-title">AMBIENT</h2>
         </header>
 
@@ -224,13 +225,12 @@
         </article>
 
         <p>DIFFERENT SOUNDS. A SHARED LANGUAGE.</p>
-        <a href="#frequencies-intro">Back to the signal ↑</a>
+        <a href="#frequencies-intro">Back ↑</a>
       </section>
     </main>
     <script>
       const themeButton = document.getElementById("themeToggle");
 
-      // Gebruik een opgeslagen keuze, anders de systeeminstelling.
       const savedTheme = localStorage.getItem("theme");
 
       const systemTheme = window.matchMedia("(prefers-color-scheme: light)")
@@ -246,7 +246,6 @@
       function applyTheme() {
         document.body.dataset.theme = currentTheme;
 
-        // De knop toont de modus waarnaar je kunt wisselen.
         themeButton.textContent =
           currentTheme === "dark" ? "DAY MODE" : "NIGHT MODE";
       }

@@ -39,6 +39,7 @@
   <p>THE SYNTHESIZER TURNED ELECTRICITY INTO EMOTION</p>
 </aside>
   <header>
+    <a href="index.html" aria-current="page">Home</a>
     <a href="contact.html">Who am I?</a>
     <a href="story.html">History</a>
     <a href="frequencies.html">FREQUENCIES</a>
@@ -47,28 +48,38 @@
   </header>
 <button id="themeToggle" type="button">DAY MODE</button>
   <main>
-    <h1>floris Terpstra</h1>
-    
-  </main>
-
+  <h1>Electronical music</h1>
+  <p id="home-subtitle">Explained by Floris Terpstra</p>
+</main>
 <script>
   const themeToggle = document.querySelector("#themeToggle");
-  const naam = document.querySelector("h1");
+  const systemTheme = window.matchMedia(
+    "(prefers-color-scheme: light)"
+  );
 
-  let donkereModus = true;
+  function updateThemeButton() {
+    const theme = document.body.dataset.theme;
+    const isLight = theme
+      ? theme === "light"
+      : systemTheme.matches;
+
+    themeToggle.textContent = isLight ? "NIGHT MODE" : "DAY MODE";
+    return isLight;
+  }
+
+  updateThemeButton();
 
   themeToggle.addEventListener("click", () => {
-    donkereModus = !donkereModus;
+    document.body.dataset.theme = updateThemeButton()
+      ? "dark"
+      : "light";
 
-    if (donkereModus) {
-      naam.style.color = "#000000";
-      document.body.removeAttribute("data-theme");
-      themeToggle.textContent = "DAY MODE";
-    } else {
-      naam.style.color = "#ffffff";
-      document.body.setAttribute("data-theme", "light");
-      themeToggle.textContent = "NIGHT MODE";
-    }
+    updateThemeButton();
+  });
+
+  systemTheme.addEventListener("change", () => {
+    document.body.removeAttribute("data-theme");
+    updateThemeButton();
   });
 </script>
 </body>

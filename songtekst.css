@@ -1,11 +1,9 @@
-/* MARK: fonts */
 @font-face {
-  font-family: 'Seraphs';
-  src: url('font/SeraphsVF.woff2') format('woff2'), /* Modern Browsers */
-}
-/* MARK: items */
-body{
-  font-family: 'Seraphs';
+  font-family: "Seraphs";
+  src: url("fonts/Seraphs.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 * {
@@ -14,76 +12,209 @@ body{
 
 body {
   margin: 0;
-  background: #000;
-  color: #fff;
-  font-family: sans-serif;
 }
 
 main {
-  min-height: 100svh;
-  padding: 3vw;
+  position: relative;
+  width: min(94%, 75rem);
+  aspect-ratio: 1 / 1.08;
+  margin: 2rem auto;
+  container-type: inline-size;
+  font-family: "Seraphs";
 }
 
-ol {
-  display: grid;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
-  grid-template-rows: repeat(8, auto);
-  align-items: center;
-
-  min-height: 90svh;
+main h1,
+main p {
+  position: absolute;
   margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-li {
-  font-weight: 700;
-  line-height: 1;
+  font-size: 3.6cqw;
+  font-weight: 400;
+  line-height: 1.1;
   white-space: nowrap;
 }
 
-li:nth-child(1) {
-  grid-area: 8 / 1;
-  font-size: 3vw;
-  color: #2c2c2c;
+main h1 {
+  top: 5%;
+  left: 5%;
+  font-size: 4cqw;
 }
 
-li:nth-child(2) {
-  grid-area: 7 / 2;
-  font-size: 3.5vw;
-  color: #545353;
+/* around */
+main p:nth-of-type(1) {
+  top: 7%;
+  left: 36%;
+  font-size: 4cqw;
+
+  transform-origin: left bottom;
+  animation: omvallen 3s ease-in-out infinite;
 }
 
-li:nth-child(3) {
-  grid-area: 6 / 3;
-  font-size: 4vw;
+@keyframes omvallen {
+  0%, 15% {
+    transform: rotate(0deg);
+  }
+
+  55% {
+    transform: rotate(80deg);
+  }
+
+  65% {
+    transform: rotate(65deg);
+  }
+
+  75%, 85% {
+    transform: rotate(75deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
-li:nth-child(4) {
-  grid-area: 5 / 4;
-  font-size: 4.5vw;
+/* bearing */
+main p:nth-of-type(2) {
+  top: 15%;
+  left: 40%;
+  font-size: 4cqw;
 }
 
-li:nth-child(5) {
-  grid-area: 4 / 5;
-  font-size: 5.5vw;
+/* down */
+main p:nth-of-type(3) {
+  top: 23%;
+  left: 52%;
 }
 
-li:nth-child(6) {
-  grid-area: 3 / 5 / 4 / 8;
-  justify-self: center;
-  font-size: 6.5vw;
+/* on */
+main p:nth-of-type(4) {
+  top: 30%;
+  left: 62%;
+  font-size: 3cqw;
 }
 
-li:nth-child(7) {
-  grid-area: 2 / 6;
-  font-size: 8vw;
+/* my */
+main p:nth-of-type(5) {
+  top: 36%;
+  left: 67%;
+  font-size: 3cqw;
 }
 
-li:nth-child(8) {
-  grid-area: 1 / 5 / 2 / 9;
-  justify-self: end;
-  font-size: 11vw;
+/* shoulders */
+main p:nth-of-type(6) {
+  top: 45%;
+  left: 72%;
+  font-size: 3.3cqw;
+
+  animation: zakken 3s ease-in-out forwards;
+}
+
+@keyframes zakken {
+  from {
+    top: 45%;
+  }
+
+  to {
+    top: calc(55% - 1.3em);
+  }
+}
+
+/* I */
+main p:nth-of-type(7) {
+  top: 55%;
+  left: 72%;
+  font-size: 2.7cqw;
+}
+
+/* can */
+main p:nth-of-type(8) {
+  top: 61%;
+  left: 65%;
+  font-size: 2.7cqw;
+}
+
+/* hear */
+main p:nth-of-type(9) {
+  top: 66%;
+  left: 57%;
+  font-size: 3.2cqw;
+}
+
+/* an */
+main p:nth-of-type(10) {
+  top: 70%;
+  left: 50%;
+  font-size: 3cqw;
+}
+
+/* alarm */
+main p:nth-of-type(11) {
+  top: 75%;
+  left: 39%;
+  font-size: 3.7cqw;
+  animation: trillen 0.15s linear infinite;
+}
+
+@keyframes trillen {
+  0%, 100% {
+    transform: translateX(0);
+  }
+
+  25%, 75% {
+    transform: translateX(-2px) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateX(2px) rotate(2deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main p:nth-of-type(11) {
+    animation: none;
+  }
+}
+
+/* it */
+main p:nth-of-type(12) {
+  top: 80%;
+  left: 34%;
+  font-size: 4.2cqw;
+}
+
+/* must */
+main p:nth-of-type(13) {
+  top: 85%;
+  left: 22%;
+  font-size: 5cqw;
+}
+
+/* be */
+main p:nth-of-type(14) {
+  top: 90%;
+  left: 37%;
+  font-size: 6cqw;
+}
+
+/* morning */
+main p:nth-of-type(15) {
+  top: 91%;
+  left: 50%;
+  font-size: 8cqw;
   font-style: italic;
-  color: yellow;
+}
+
+html,
+body {
+  background-color: black;
+  color: white;
+}
+
+main h1,
+main p {
+  color: white;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main p:nth-of-type(6) {
+    animation: none;
+  }
 }

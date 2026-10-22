@@ -6,6 +6,20 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "AlteHaasGrotesk";
+  src: url("fonts/AlteHaasGroteskRegular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ledlight";
+  src: url("fonts/LEDLIGHT.otf") format("opentype");
+}
+
+
 * {
   box-sizing: border-box;
 }
@@ -53,10 +67,6 @@ body {
   font-family: "Ledlight", Arial, sans-serif;
 }
 
-@font-face {
-  font-family: "Ledlight";
-  src: url("fonts/LEDLIGHT.otf") format("opentype");
-}
 
 h1 {
   margin: 0;
@@ -295,4 +305,58 @@ background: var(--background);
 .kaart h2 {
   font-family: "FakeReceipt", Arial, sans-serif;
   font-weight: 400;
+}
+
+body > header a[aria-current="page"] {
+  background: #ff00cc;
+  color: #000;
+  border-color: #ff00cc;
+  box-shadow: 0 0 18px 4px #ff00cc;
+}
+
+@media (min-width: 1001px) {
+  body > header {
+    position: fixed;
+    z-index: 10;
+    top: 2rem;
+    right: 2rem;
+    bottom: auto;
+    left: auto;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.8rem;
+
+    width: auto;
+    padding: 0;
+    background: transparent;
+  }
+
+  /* Ruimte behouden voor de navigatie */
+  body {
+    padding-top: 7rem;
+  }
+}
+
+.kaart p:not(.jaar) {
+  font-family: "AlteHaasGrotesk", Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 1.3vw, 1.5rem);
+  line-height: 1.6;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+@media (max-width: 1000px) {
+  .kaart p:not(.jaar) {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1001px) {
+  .kaart p:not(.jaar) {
+    max-width: 90ch;
+    
+  }
 }

@@ -4,6 +4,14 @@
   src: url("fonts/LEDLIGHT.otf") format("opentype");
 }
 
+@font-face {
+  font-family: "AlteHaasGrotesk";
+  src: url("fonts/AlteHaasGroteskRegular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   margin: 0;
   background-color: #000000;
@@ -272,3 +280,11 @@ main > h1 {
     max-height: none;
   }
 }
+
+body > header a[aria-current="page"] {
+  background: #ff00cc;
+  color: #000;
+  border-color: #ff00cc;
+  box-shadow: 0 0 18px 4px #ff00cc;
+}
+

@@ -10,6 +10,15 @@ body {
   font-family: "Ledlight";
   src: url("fonts/LEDLIGHT.otf") format("opentype");
 }
+
+@font-face {
+  font-family: "AlteHaasGrotesk";
+  src: url("fonts/AlteHaasGroteskRegular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -71,6 +80,7 @@ header {
   justify-content: flex-start;
   transform: none;
 }
+
 header a {
   position: relative;
   padding: 0.6rem 0.8rem;
@@ -202,17 +212,6 @@ main {
   }
 }
 
-header {
-  position: fixed !important;
-  z-index: 10 !important;
-  top: 2rem !important;
-  right: 2rem !important;
-  bottom: auto !important;
-  left: auto !important;
-  width: auto !important;
-  transform: none !important;
-}
-
 #themeToggle {
   position: fixed;
   z-index: 9999;
@@ -228,6 +227,15 @@ header {
   font-family: "Ledlight", Arial, sans-serif;
   font-size: 0.85rem;
   cursor: pointer;
+}
+
+#themeToggle {
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
 }
 
 
@@ -264,7 +272,6 @@ header {
   padding: 0;
 }
 
-
 #consent[open] {
   width: min(30rem, calc(100% - 2rem));
   padding: 1.5rem;
@@ -285,16 +292,6 @@ header {
   outline: 2px solid lime;
   outline-offset: 4px;
 }
-
-#themeToggle {
-  transition:
-    color 0.25s ease,
-    background 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
-}
-
 
 :root {
   color-scheme: dark;
@@ -366,5 +363,146 @@ header a:focus-visible,
   border-color: #ff00cc;
 }
 
+body > header a[aria-current="page"] {
+  background: #ff00cc;
+  color: #000;
+  border-color: #ff00cc;
+  box-shadow: 0 0 18px 4px #ff00cc;
+}
 
+/* Navigatie op grote schermen */
+body > header {
+  position: fixed;
+  z-index: 10;
+  top: 2rem;
+  right: 2rem;
+  bottom: auto;
+  left: auto;
+  width: auto;
+  transform: none;
+}
 
+/* Werkt ook als je links binnen een nav staan */
+body > header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+body > header a {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Naam past binnen het scherm */
+main {
+  min-width: 0;
+}
+
+main h1 {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+/* Tablet en telefoon */
+@media (max-width: 1200px) {
+  #themeToggle {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+
+  body > header {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+
+    width: 100%;
+    padding: 5rem 1rem 1rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.6rem;
+  }
+
+  body > header nav {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 0.6rem;
+  }
+
+  main {
+    min-height: 65svh;
+    padding: 2rem 1rem;
+  }
+
+  main h1 {
+    font-size: clamp(2rem, 8vw, 5rem);
+  }
+}
+
+/* Privacyvenster op kleine schermen */
+@media (max-width: 600px) {
+  #consent {
+    max-height: 60svh;
+    overflow-wrap: anywhere;
+    font-size: 0.85rem;
+  }
+
+  #consent[open] {
+    padding: 1rem;
+  }
+}
+
+/* Minder beweging als de gebruiker dat heeft ingesteld */
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  aside p {
+    animation: none;
+  }
+
+  aside {
+    display: none;
+  }
+}
+
+html {
+  background: var(--background);
+}
+
+body,
+body::before {
+  background-color: var(--background);
+}
+
+main h1 {
+  color: var(--text);
+  -webkit-text-fill-color: var(--text);
+  mix-blend-mode: normal;
+  opacity: 1;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+main h1 {
+  font-size: clamp(2rem, 7vw, 7rem);
+  line-height: 1.15;
+  color: var(--text);
+}
+
+#home-subtitle {
+  margin: 0;
+  font-family: "AlteHaasGrotesk"; 
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  line-height: 1.5;
+  color: var(--text);
+}

@@ -11,6 +11,8 @@
    
     <header>
       <a href="index.html">Home</a>
+      <a href="contact.html">Who am I?</a>
+      <a href="story.html" aria-current="page">History</a>
       <a href="frequencies.html">FREQUENCIES</a>
       <a href="https://github.com/floristerpstra123/model/edit/main/README.md" >log</a>
       <a href="letithappen.html"> Songtekst</a>
@@ -151,7 +153,10 @@
     updateKnop();
   });
 
-  apparaatThema.addEventListener("change", updateKnop);
+ apparaatThema.addEventListener("change", () => {
+  document.body.removeAttribute("data-theme");
+  updateKnop();
+});
 
   updateKnop();
 </script>  
