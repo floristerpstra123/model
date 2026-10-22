@@ -183,7 +183,7 @@ I can hear an alarm it must be morning.
 Toen ik het luisterde kreeg ik impressie van omvallen en weer opstaan, de muziek die langzaam luider en duidelijker word, waardoor je het gevoel krijgt dat je bij het woordje morning daadwerkelijk wakker word. Ik heb er daarom voor gekozen om een soort omvallende en steeds kleinere tekst te maken, die bij het einde weer groter word, net alsof je wakker word.
 
 
-
+https://codepen.io/your-work?item_type=PEN
 
 
 Deep dives:
