@@ -1,4 +1,6 @@
 
+
+
 # Model
 
 Het staat model voor digitale tuintjes welke bij 'Het web is voor iedereen' door studenten worden gemaakt.
@@ -171,6 +173,8 @@ Let it happen - Tame Impala
 <img width="3024" height="4032" alt="IMG_7277" src="https://github.com/user-attachments/assets/d4896207-8764-4731-860a-88e076d35291" />
 <img width="3024" height="4032" alt="IMG_7278" src="https://github.com/user-attachments/assets/3cbfb70a-8d5c-48eb-bd74-2941f6cb176b" />
 <img width="3024" height="4032" alt="IMG_7279" src="https://github.com/user-attachments/assets/05d39d3e-cfb8-47e8-bb47-da7af971cf02" />
+<img width="3024" height="4032" alt="IMG_7280" src="https://github.com/user-attachments/assets/72168bb8-1dfd-4952-a349-62556effb1d8" />
+<img width="3024" height="4032" alt="IMG_7281" src="https://github.com/user-attachments/assets/02d7e3b4-a69c-4561-8f1b-d53b8a42acf9" />
 
 
 
