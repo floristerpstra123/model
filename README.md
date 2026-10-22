@@ -176,17 +176,22 @@ Let it happen - Tame Impala
 <img width="3024" height="4032" alt="IMG_7280" src="https://github.com/user-attachments/assets/72168bb8-1dfd-4952-a349-62556effb1d8" />
 <img width="3024" height="4032" alt="IMG_7281" src="https://github.com/user-attachments/assets/02d7e3b4-a69c-4561-8f1b-d53b8a42acf9" />
 
+Ik heb gekozen voor het stukje
+All this running around, bearing down on my shoulders
+I can hear an alarm it must be morning.
+
+Toen ik het luisterde kreeg ik impressie van omvallen en weer opstaan, de muziek die langzaam luider en duidelijker word, waardoor je het gevoel krijgt dat je bij het woordje morning daadwerkelijk wakker word. Ik heb er daarom voor gekozen om een soort omvallende en steeds kleinere tekst te maken, die bij het einde weer groter word, net alsof je wakker word.
+
 
 
 
 
 Deep dives:
 
-Sprint 0:
 
-Sprint 1:
 Light en dark:
-
+<img width="2436" height="1598" alt="image" src="https://github.com/user-attachments/assets/7231ce10-d1a9-4e36-9df0-a776bab1dbac" />
+<img width="2422" height="1608" alt="image" src="https://github.com/user-attachments/assets/359d36c7-4929-432a-b280-05ef3cac3f58" />
 Mooie kleuren en gradients:
 <img width="1209" height="803" alt="Screenshot 2026-10-17 at 17 16 36" src="https://github.com/user-attachments/assets/858b185e-1f55-41ab-88bd-9604d42584c7" />
 
@@ -208,9 +213,7 @@ Responsive grid + Grid-areas:
 <img width="2440" height="1330" alt="image" src="https://github.com/user-attachments/assets/54ea2bc3-ada8-4113-a8dd-6ab4caef8006" />
 <img width="2432" height="1398" alt="image" src="https://github.com/user-attachments/assets/7d8f9ffa-24f4-42e4-b508-d554b929f186" />
 
-Sprint 2: 
 
-Sprint 3:
 
 
 
