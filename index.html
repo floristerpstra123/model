@@ -7,82 +7,45 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 
-<details id="consent" open>
-  <summary>PRIVACY NOTICE </summary>
+  <title>Electronic music — Floris Terpstra</title>
+  
 
-  <h2>ONLY FUNCTIONAL COOKIES</h2>
 
-  <p>
-    This website only uses necessary functional cookies.
-    It does not use analytics or advertising cookies.
-  </p>
+  <a id="skip-link" href="#inhoud">Skip to content</a>
+  <button id="themeToggle" type="button">DAY MODE</button>
 
-  <button type="button" id="consent-close">GOT IT</button>
-
-</details>
-
-<script>
-  const notice = document.querySelector("#consent");
-  const button = document.querySelector("#consent-close");
-
-  button.addEventListener("click", () => {
-    notice.hidden = true;
-  });
-</script>
-
-<body>
-  <aside aria-hidden="true">
-  <p>FROM WAREHOUSES TO DANCEFLOORS — THE SIGNAL SPREADS</p>
-  <p>THE BEAT GAVE STRANGERS A COMMON LANGUAGE</p>
-  <p>THE FUTURE OF MUSIC WAS BUILT FROM ELECTRIC SIGNALS</p>
-  <p>HOUSE • TECHNO • ELECTRO • AMBIENT • RAVE • COMMUNITY</p>
-  <p>THE SYNTHESIZER TURNED ELECTRICITY INTO EMOTION</p>
-</aside>
   <header>
-    <a href="index.html" aria-current="page">Home</a>
-    <a href="contact.html">Who am I?</a>
-    <a href="story.html">History</a>
-    <a href="frequencies.html">FREQUENCIES</a>
-    <a href="https://github.com/floristerpstra123/model/edit/main/README.md">LOG</a>
-    <a href="letithappen.html"> Songtekst</a>
+    <nav aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="contact.html">Who am I?</a>
+      <a href="story.html">History</a>
+      <a href="frequencies.html">Frequencies</a>
+      <a href="https://github.com/floristerpstra123/model/edit/main/README.md">Log</a>
+      <a href="letithappen.html">Songtekst</a>
+    </nav>
   </header>
-<button id="themeToggle" type="button">DAY MODE</button>
-  <main>
-  <h1>Electronical music</h1>
-  <p id="home-subtitle">Explained by Floris Terpstra</p>
-</main>
-<script>
-  const themeToggle = document.querySelector("#themeToggle");
-  const systemTheme = window.matchMedia(
-    "(prefers-color-scheme: light)"
-  );
 
-  function updateThemeButton() {
-    const theme = document.body.dataset.theme;
-    const isLight = theme
-      ? theme === "light"
-      : systemTheme.matches;
+  
+  <aside aria-hidden="true">
+    <p>FROM WAREHOUSES TO DANCEFLOORS — THE SIGNAL SPREADS</p>
+    <p>THE BEAT GAVE STRANGERS A COMMON LANGUAGE</p>
+    <p>THE FUTURE OF MUSIC WAS BUILT FROM ELECTRIC SIGNALS</p>
+    <p>HOUSE • TECHNO • ELECTRO • AMBIENT • RAVE • COMMUNITY</p>
+    <p>THE SYNTHESIZER TURNED ELECTRICITY INTO EMOTION</p>
+  </aside>
 
-    themeToggle.textContent = isLight ? "NIGHT MODE" : "DAY MODE";
-    return isLight;
-  }
+  <main id="inhoud" tabindex="-1" aria-labelledby="pagina-titel">
+    <h1 id="pagina-titel">Electronic music</h1>
+    <p id="home-subtitle">Explained by Floris Terpstra</p>
+    <p id="home-instruction">Press any of the buttons above to learn more.</p>
+  </main>
 
-  updateThemeButton();
-
-  themeToggle.addEventListener("click", () => {
-    document.body.dataset.theme = updateThemeButton()
-      ? "dark"
-      : "light";
-
-    updateThemeButton();
-  });
-
-  systemTheme.addEventListener("change", () => {
-    document.body.removeAttribute("data-theme");
-    updateThemeButton();
-  });
-</script>
-</body>
-
-</html>
-
+  <details id="consent" open="">
+    <summary>PRIVACY NOTICE</summary>
+    <h2>ONLY FUNCTIONAL COOKIES</h2>
+    <p>
+      This website only uses necessary functional cookies.
+      It does not use analytics or advertising cookies.
+    </p>
+    <button id="consent-close" type="button">GOT IT</button>
+  </details>
