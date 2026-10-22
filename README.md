@@ -154,15 +154,22 @@ Spatial tension: visuele spanning door de afstand en positie van elementen. Een 
 
 
 Wat is jouw ideale regellengte (measure)? Leg uit waarom.
-
+Mijn ideale regellengte is ongeveer 60 tekens per regel, inclusief spaties. Dit leest voor mij prettig: je hoeft niet te ver met je ogen te bewegen en kunt makkelijk de volgende regel vinden. Bij heel korte regels moet je juist steeds naar een nieuwe regel springen.
 
 Als je in een ontwerp maar één variabele tot je beschikking had om hiërarchie aan te brengen (grootte, plaatsing, spacing, lettersoorten), welke zou je dan gebruiken en waarom?
+Ik zou grootte gebruiken. Met een grote titel, kleinere tussenkoppen en nog kleinere lopende tekst is snel duidelijk wat het belangrijkste is. Zo kan de gebruiker de pagina makkelijk scannen, ook als ik overal hetzelfde lettertype gebruik.
 
 7 oktober
 
 Waarom is het goed om een grid in je ontwerp toe te passen? Noem een reden voor de ontwerper en een voor de bezoeker.
+Voor de ontwerper geeft een grid houvast bij het plaatsen en uitlijnen van elementen. Daardoor kan ik makkelijker een consistente layout maken.
+Voor de bezoeker wordt de pagina overzichtelijker, waardoor informatie makkelijker te vinden is.
+
 Noem drie manieren om chaos in je ontwerp te voorkomen.
+Met duidelijke hiërarchie laat ik zien wat belangrijk is. Genoeg witruimte zorgt dat niet alles op elkaar staat. Ook gebruik ik een beperkt aantal kleuren en fonts om het ontwerp consistent te houden.
+
 Hoeveel gekkigheid moet er in je werk zitten?
+Voor mij genoeg om het ontwerp een eigen karakter te geven, maar niet zoveel dat het onduidelijk wordt. Bij mijn website passen neonkleuren en beweging bij de clubsfeer, maar de tekst en navigatie moeten wel goed leesbaar blijven.
 
 Songtekst:
 Let it happen - Tame Impala
@@ -184,7 +191,7 @@ Toen ik het luisterde kreeg ik impressie van omvallen en weer opstaan, de muziek
 
 
 https://codepen.io/your-work?item_type=PEN
-
+Ik heb niet alle deepdives opgeslagen dus hierondernog wat foto's van opdrachten.
 
 Deep dives:
 
