@@ -171,6 +171,19 @@ Met duidelijke hiërarchie laat ik zien wat belangrijk is. Genoeg witruimte zorg
 Hoeveel gekkigheid moet er in je werk zitten?
 Voor mij genoeg om het ontwerp een eigen karakter te geven, maar niet zoveel dat het onduidelijk wordt. Bij mijn website passen neonkleuren en beweging bij de clubsfeer, maar de tekst en navigatie moeten wel goed leesbaar blijven.
 
+9 oktober
+
+Welke variabelen van Seraphs gebruik je in de opmaak van je songtekst?
+Ik gebruik vooral grootte, plaatsing, spacing en schuine tekst. De woorden staan niet op rechte regels, maar volgen een slingerende route. Aan het einde wordt de tekst groter en staat ‘morning’ cursief.
+
+Wat voegt iedere variabele toe aan je ontwerp (denk aan leesbaarheid, hiërarchie of de uitstraling die je wil bereiken)?
+Met grootte geef ik belangrijke woorden meer nadruk, vooral ‘morning’. De plaatsing laat je ogen door de tekst bewegen en past bij ‘running around’ en ‘bearing down’. De ruimte tussen de woorden zorgt voor rust en pauzes tijdens het lezen. De schuine tekst geeft ‘around’ beweging en maakt ‘morning’ extra opvallend
+
+Hoe zou je animatie kunnen toepassen om het ritme of de accenten in de weergave van je songtekst nog beter visueel te maken?
+Ik zou bepaalde woorden waar een toon verschil is laten bewegen. ‘Down’ kan langzaam naar beneden bewegen en ‘alarm’ kan kort pulseren. Aan het einde kan ‘morning’ groter worden, zodat dat woord extra nadruk krijgt.
+
+
+
 Songtekst:
 Let it happen - Tame Impala
 <img width="3024" height="4032" alt="IMG_7273" src="https://github.com/user-attachments/assets/0d58609d-720e-4635-9d65-5ab24465496a" />
@@ -188,6 +201,9 @@ All this running around, bearing down on my shoulders
 I can hear an alarm it must be morning.
 
 Toen ik het luisterde kreeg ik impressie van omvallen en weer opstaan, de muziek die langzaam luider en duidelijker word, waardoor je het gevoel krijgt dat je bij het woordje morning daadwerkelijk wakker word. Ik heb er daarom voor gekozen om een soort omvallende en steeds kleinere tekst te maken, die bij het einde weer groter word, net alsof je wakker word.
+
+<img width="1304" height="1258" alt="image" src="https://github.com/user-attachments/assets/e919fb84-c204-4c1b-8cbb-85c16637e576" />
+
 
 
 https://codepen.io/your-work?item_type=PEN
