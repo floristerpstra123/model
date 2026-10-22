@@ -1,6 +1,8 @@
 @font-face {
   font-family: "Ledlight";
   src: url("fonts/LEDLIGHT.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
   font-display: swap;
 }
 
@@ -20,15 +22,11 @@
   font-display: swap;
 }
 
-
-* { box-sizing: border-box; }
-
 :root {
   color-scheme: dark;
   --background: #000;
   --text: #fff;
 }
-
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -50,139 +48,156 @@ body[data-theme="dark"] {
   --text: #fff;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   background: var(--background);
   color: var(--text);
-  font-family: Arial, sans-serif;
+  font-family: "AlteHaasGrotesk", Arial, sans-serif;
 }
 
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: "Ledlight", Arial, sans-serif;
+  font-weight: 400;
+}
 
-body > header { padding: 2rem; }
+main p {
+  margin: 0;
+  font-family: "FakeReceipt", Arial, sans-serif;
+  font-weight: 400;
+}
 
-body > header nav {
+body > header {
+  padding: 2rem 2rem 2rem 16rem;
+}
+
+header nav {
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
-
-:is(body > header a, #themeToggle, #intro-scroll,
-    main > section:not(#frequencies-intro) > a) {
+header a,
+#themeToggle,
+main > section > a {
   display: inline-block;
-  padding: var(--button-padding, 0.8rem 1rem);
+  padding: 0.8rem 1rem;
   border: 1px solid currentColor;
   border-radius: 0;
   background: transparent;
   color: var(--text);
+  font-size: 1rem;
   text-decoration: none;
-  font-size: var(--button-font-size, 1rem);
   cursor: pointer;
-  transition: background 0.25s ease, color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
 
-&:is(:hover, :focus-visible) {
+header a,
+#themeToggle {
+  padding: 0.6rem 0.8rem;
+  font-family: "Ledlight", Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#themeToggle {
+  position: absolute;
+  z-index: 10;
+  top: 2rem;
+  left: 2rem;
+  background: var(--background);
+}
+
+header a:hover,
+header a:focus-visible,
+header a[aria-current="page"],
+#themeToggle:hover,
+#themeToggle:focus-visible,
+main > section > a:hover,
+main > section > a:focus-visible {
   background: #ff00cc;
   color: #000;
   border-color: #ff00cc;
   box-shadow: 0 0 18px 4px #ff00cc;
 }
 
-  &:focus-visible {
-    outline: 3px solid var(--text);
-    outline-offset: 5px;
-  }
-}
-
-body > header a,
-#themeToggle {
-  --button-padding: 0.6rem 0.8rem;
-  --button-font-size: 0.85rem;
-
-  font-family: "Ledlight", Arial, sans-serif;
-  font-weight: 400;
-  line-height: normal;
-  text-transform: uppercase;
-}
-
-body > header a {
-  letter-spacing: 0.08em;
+header a:hover,
+header a:focus-visible,
+#themeToggle:hover,
+#themeToggle:focus-visible {
+  transform: translateY(-3px);
 }
 
 
-body > header a,
-#themeToggle {
-  padding: 0.6rem 0.8rem;
-  font-size: 0.85rem;
-  font-weight: 400;
-  line-height: normal;
-}
-
-
-body > header a {
-  letter-spacing: 0.08em;
-}
-
-#themeToggle {
-  position: absolute;
-  z-index: 100;
-  top: 2rem;
-  left: 2rem;
+main > section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   background: var(--background);
+  scroll-margin-top: 2rem;
+}
+
+main > section::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  inset: -15%;
+  background:
+    radial-gradient(ellipse at 25% 40%, var(--glow-one), transparent 50%),
+    radial-gradient(ellipse at 75% 60%, var(--glow-two), transparent 50%);
+  filter: blur(40px);
+  animation: genre-drift var(--speed, 10s) ease-in-out infinite alternate;
 }
 
 
 #frequencies-intro {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  min-height: 85svh;
-  padding: 5rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 85svh;
+  padding: 5rem 1.5rem;
   text-align: center;
-
-  &::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    pointer-events: none;
-    inset: 5% 10%;
-    background:
-      radial-gradient(ellipse at 35% 45%, #ff00cc55, transparent 55%),
-      radial-gradient(ellipse at 65% 60%, #7000ff55, transparent 55%);
-    filter: blur(45px);
-    animation: signal-drift 8s ease-in-out infinite alternate;
-  }
 }
 
-#intro-label {
-  margin: 0 0 1.5rem;
-  font-size: 0.85rem;
-  letter-spacing: 0.2em;
+#frequencies-intro::before {
+  inset: 5% 10%;
+  background:
+    radial-gradient(ellipse at 35% 45%, #ff00cc55, transparent 55%),
+    radial-gradient(ellipse at 65% 60%, #7000ff55, transparent 55%);
+  filter: blur(45px);
+  animation: signal-drift 8s ease-in-out infinite alternate;
 }
 
 #intro-title {
-  margin: 0;
   max-width: 100%;
-  font-family: "Ledlight", Arial, sans-serif;
-  font-weight: 400;
   font-size: clamp(2rem, 8vw, 7rem);
   overflow-wrap: anywhere;
 }
 
 #intro-description {
   max-width: 48ch;
-  margin: 0;
   font-size: 1.1rem;
   line-height: 1.7;
 }
 
-#intro-scroll { margin-top: 2rem; font-family: "AlteHaasGrotesk";}
-
-
+#intro-scroll {
+  margin-top: 2rem;
+}
 
 #house {
   --glow-one: #ff006633;
@@ -211,185 +226,143 @@ body > header a {
   --speed: 22s;
 }
 
-
 main > section:not(#frequencies-intro) {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  min-height: 100svh;
-  padding: clamp(3rem, 7vw, 7rem) clamp(1.5rem, 6vw, 6rem);
-  background: var(--background);
-  color: var(--text);
-  border-top: 1px solid currentColor;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 3rem;
   align-content: center;
-  scroll-margin-top: 2rem;
+  gap: 3rem;
+  min-height: 100svh;
+  padding: clamp(3rem, 7vw, 7rem) clamp(1.5rem, 6vw, 6rem);
+  border-top: 1px solid currentColor;
+}
 
-  &::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    pointer-events: none;
-    inset: -15%;
-    background:
-      radial-gradient(ellipse at 25% 40%, var(--glow-one, #ff006633), transparent 50%),
-      radial-gradient(ellipse at 75% 60%, var(--glow-two, #ff880033), transparent 50%);
-    filter: blur(40px);
-    animation: genre-drift var(--speed, 10s) ease-in-out infinite alternate;
-  }
+main > section > h2,
+main > section > p,
+main > section > a {
+  grid-column: 1 / -1;
+}
 
-  & p {
-  margin: 0;
-  font-family: "FakeReceipt", Arial, sans-serif;
-  font-weight: 400;
-  font-size: 1.05rem;
+h2 {
+  font-size: clamp(2.5rem, 10vw, 9rem);
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+#drum-bass h2 {
+  font-size: clamp(2rem, 7vw, 7rem);
+}
+
+main article {
+  min-width: 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid currentColor;
+}
+
+h3 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+main article p {
+  max-width: 48ch;
+  font-family: "AlteHaasGrotesk", Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+main > section:not(#frequencies-intro) > p {
+  font-size: 0.9rem;
   line-height: 1.8;
-  color: inherit;
+  letter-spacing: 0.12em;
 }
 
-  & h2, & h3 {
-    margin: 0;
-    font-family: "Ledlight", Arial, sans-serif;
-    font-weight: 400;
-    color: inherit;
-  }
-
-  & > header {
-    grid-column: 1 / -1;
-    position: static;
-    display: block;
-    padding: 0;
-    background: transparent;
-    color: inherit;
-    text-align: left;
-  }
-
-  & > header > p:first-child {
-    margin-bottom: 1rem;
-    font-size: 0.85rem;
-    letter-spacing: 0.18em;
-  }
-
-  & h2 {
-    font-size: clamp(2.5rem, 10vw, 9rem);
-    line-height: 1.1;
-    overflow-wrap: anywhere;
-  }
-
-  & > header > p:last-child {
-    margin-top: 1.5rem;
-    font-size: clamp(1.3rem, 3vw, 2rem);
-    line-height: 1.4;
-  }
-
-  & > article {
-    min-width: 0;
-    padding-top: 1.5rem;
-    border-top: 1px solid currentColor;
-  }
-
-  & h3 {
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-  }
-
-  & > article > p { max-width: 48ch; }
-
-  & > p, & > a { grid-column: 1 / -1; }
-
-  & > p {
-    font-size: 0.9rem;
-    letter-spacing: 0.12em;
-  }
-
-  & > a { justify-self: start; }
+main > section > a {
+  justify-self: start;
 }
 
-#drum-bass h2 { font-size: clamp(2rem, 7vw, 7rem); }
+#skip-link {
+  position: fixed;
+  z-index: 20;
+  top: 1rem;
+  left: 1rem;
+  padding: 1rem;
+  border: 2px solid currentColor;
+  background: var(--background);
+  color: var(--text);
+  transform: translateY(-200%);
+}
 
+#skip-link:focus {
+  transform: translateY(0);
+}
+
+a:focus-visible,
+button:focus-visible,
+main:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 5px;
+}
 
 @keyframes signal-drift {
-  0% { transform: translate(-15%, -10%) scale(0.9); }
-  50% { transform: translate(10%, 5%) scale(1.2); }
-  100% { transform: translate(-5%, 15%) scale(1); }
+  0% {
+    transform: translate(-15%, -10%) scale(0.9);
+  }
+  50% {
+    transform: translate(10%, 5%) scale(1.2);
+  }
+  100% {
+    transform: translate(-5%, 15%) scale(1);
+  }
 }
 
 @keyframes genre-drift {
-  from { transform: translate(-8%, -4%) scale(1); }
-  to { transform: translate(8%, 4%) scale(1.12); }
+  from {
+    transform: translate(-8%, -4%) scale(1);
+  }
+  to {
+    transform: translate(8%, 4%) scale(1.12);
+  }
 }
 
-
-@media (max-width: 750px) {
-  main > section:not(#frequencies-intro) {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+@media (max-width: 1200px) {
+  body > header {
+    padding: 5.5rem 1rem 1rem;
   }
 
-  body > header { padding: 1rem; }
-
-  body:has(#themeToggle) > header { padding-top: 5.5rem; }
+  header nav {
+    justify-content: flex-start;
+    gap: 0.6rem;
+  }
 
   #themeToggle {
-    position: absolute;
     top: 1rem;
     left: 1rem;
   }
 }
 
+@media (max-width: 750px) {
+  main > section:not(#frequencies-intro) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #frequencies-intro::before,
-  main > section:not(#frequencies-intro)::before {
+  main > section::before {
     animation: none;
   }
 
-  :is(body > header a, #themeToggle, #intro-scroll,
-      main > section:not(#frequencies-intro) > a) {
+  header a,
+  #themeToggle,
+  main > section > a {
     transition: none;
+    transform: none;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  :is(body > header a, #themeToggle) {
-    transition:
-      color 0.25s ease,
-      background 0.25s ease,
-      border-color 0.25s ease,
-      box-shadow 0.25s ease,
-      transform 0.25s ease;
-  }
-
-  :is(body > header a, #themeToggle):is(:hover, :focus-visible) {
-    transform: translateY(-3px);
-  }
-}
-
-
-main p {
-  font-family: "FakeReceipt", Arial, sans-serif;
-  font-weight: 400;
-}
-
-
-:is(body > header a, #themeToggle)[aria-current="page"] {
-  background: #ff00cc;
-  color: #000;
-  border-color: #ff00cc;
-  box-shadow: 0 0 18px 4px #ff00cc;
-}
-
-main > section:not(#frequencies-intro) > article > p {
-  font-family: "AlteHaasGrotesk", Arial, sans-serif;
-  font-weight: 400;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  letter-spacing: normal;
-  text-transform: none;
 }
