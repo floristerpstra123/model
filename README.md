@@ -1,4 +1,5 @@
 
+
 # Model
 
 Het staat model voor digitale tuintjes welke bij 'Het web is voor iedereen' door studenten worden gemaakt.
@@ -165,7 +166,7 @@ Hoeveel gekkigheid moet er in je werk zitten?
 Songtekst:
 Let it happen - Tame Impala
 <img width="3024" height="4032" alt="IMG_7273" src="https://github.com/user-attachments/assets/0d58609d-720e-4635-9d65-5ab24465496a" />
-
+<img width="3024" height="4032" alt="IMG_7272 (1)" src="https://github.com/user-attachments/assets/bb54f6b7-c24a-450d-aaed-11455fbaf659" />
 
 
 
