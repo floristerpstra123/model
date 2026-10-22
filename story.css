@@ -1,4 +1,12 @@
 @font-face {
+  font-family: "Ledlight";
+  src: url("fonts/LEDLIGHT.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "FakeReceipt";
   src: url("fonts/Fake Receipt.otf") format("opentype");
   font-weight: 400;
@@ -14,15 +22,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Ledlight";
-  src: url("fonts/LEDLIGHT.otf") format("opentype");
-}
-
-
-* {
-  box-sizing: border-box;
-}
 :root {
   color-scheme: dark;
   --background: #000;
@@ -31,7 +30,6 @@
   --title: #00ff1a;
 }
 
-/* Volg de apparaatinstelling */
 @media (prefers-color-scheme: light) {
   :root {
     color-scheme: light;
@@ -42,7 +40,6 @@
   }
 }
 
-/* Handmatige light mode */
 body[data-theme="light"] {
   color-scheme: light;
   --background: #fff;
@@ -51,7 +48,6 @@ body[data-theme="light"] {
   --title: #006b0b;
 }
 
-/* Handmatige dark mode */
 body[data-theme="dark"] {
   color-scheme: dark;
   --background: #000;
@@ -60,177 +56,196 @@ body[data-theme="dark"] {
   --title: #00ff1a;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  background-color: var(--background);
+  padding-top: 7rem;
+  background: var(--background);
   color: var(--text);
-  font-family: "Ledlight", Arial, sans-serif;
+  font-family: "AlteHaasGrotesk", Arial, sans-serif;
 }
 
-
-h1 {
-  margin: 0;
-  padding: 35px 40px 10px;
-  font-size: clamp(2.5rem, 8vw, 7rem);
-color: var(--title);
-   font-weight: 400;
-  letter-spacing: 0.04em;
-  
+body > header {
+  position: fixed;
+  z-index: 10;
+  top: 2rem;
+  right: 2rem;
 }
 
-.instructie {
-  margin: 0;
-  padding: 0 40px 25px;
-color: var(--muted);
-  font-family: Arial, sans-serif;
-}
-
-.tijdlijn {
+header nav {
   display: flex;
-  width: 100%;
-  height: auto;
-min-height: 65vh;
-  padding: 4rem;
-
-  overflow-x: scroll;
-  overflow-y: hidden;
-
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-
-  -webkit-overflow-scrolling: touch;
-  
+  flex-wrap: wrap;
+  gap: 0.8rem;
 }
 
-.kaart {
-  flex: 0 0 100%;
-  min-width: 100%;
-
-  padding: 60px 80px;
-  border-right: 2px solid #444;
-
-  scroll-snap-align: start;
-}
-
-.jaar {
-  margin: 0 0 15px;
-  color: #c000ff;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.kaart h2 {
-  margin: 0 0 25px;
-  font-size: 2.5rem;
-}
-
-.kaart p:not(.jaar) {
- font-family: "BlueScreen", Arial, sans-serif;
-  font-weight: 400;
-  max-width: 58ch;
-  font-size: clamp(1rem, 1.3vw, 1.5rem);
-  line-height: 1.6;
-}
-
-
-.tijdlijn::-webkit-scrollbar {
-  height: 12px;
-}
-
-.tijdlijn::-webkit-scrollbar-track {
-  background-color: #222222;
-}
-
-.tijdlijn::-webkit-scrollbar-thumb {
-  background-color: #c000ff;
-  border-radius: 10px;
-}
-
-
-@media (max-width: 600px) {
-  h1 {
-    padding: 25px 25px 10px;
-    font-size: 1.8rem;
-  }
-
-  .instructie {
-    padding: 0 25px 20px;
-  }
-
-  .kaart {
-    padding: 40px 25px;
-  }
-
-  .kaart h2 {
-    font-size: 2rem;
-  }
-}
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 1.5rem;
-
-  padding: 2rem 4rem;
-background-color: var(--background);
-}
-header a {
-  position: relative;
+header a,
+#themeToggle {
+  display: inline-block;
   padding: 0.6rem 0.8rem;
-border: 1px solid currentColor;
+  border: 1px solid currentColor;
   border-radius: 0;
+  background: var(--background);
   color: var(--text);
-background: var(--background);
   font-family: "Ledlight", Arial, sans-serif;
   font-size: 0.85rem;
+  font-weight: 400;
   letter-spacing: 0.08em;
   text-decoration: none;
   text-transform: uppercase;
+  cursor: pointer;
   transition:
-    color 0.25s ease,
     background 0.25s ease,
+    color 0.25s ease,
     box-shadow 0.25s ease,
     transform 0.25s ease;
 }
 
-header a:hover {
-  color: #000;
+#themeToggle {
+  position: fixed;
+  z-index: 10;
+  top: 2rem;
+  left: 2rem;
+}
+
+header a:hover,
+header a:focus-visible,
+header a[aria-current="page"],
+#themeToggle:hover,
+#themeToggle:focus-visible {
   background: #ff00cc;
+  color: #000;
   border-color: #ff00cc;
-  box-shadow: 0 0 18px #ff00cc;
+  box-shadow: 0 0 18px 4px #ff00cc;
+}
+
+header a:hover,
+header a:focus-visible,
+#themeToggle:hover,
+#themeToggle:focus-visible {
   transform: translateY(-3px);
 }
 
-#themeToggle {
-  position: fixed;
-  z-index: 9999;
-  top: 2rem;
-  left: 2rem;
+#inhoud {
+  scroll-margin-top: 7rem;
+}
 
-  padding: 0.6rem 0.8rem;
- border: 1px solid currentColor;
-  border-radius: 0;
-  color: var(--text);
-background: var(--background);
-
+h1 {
+  margin: 0;
+  padding: 2rem 2.5rem 0.6rem;
+  color: var(--title);
   font-family: "Ledlight", Arial, sans-serif;
-  font-size: 0.85rem;
-  cursor: pointer;
+  font-size: clamp(2.5rem, 8vw, 7rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  overflow-wrap: anywhere;
+}
+
+#instructie {
+  margin: 0;
+  padding: 0 2.5rem 1.5rem;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 
+#tijdlijn {
+  display: flex;
+  width: 100%;
+  min-height: 65vh;
+  padding: 4rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-color: #c000ff var(--background);
+}
 
-.kaart h2,
-.kaart p:not(.jaar) {
+#tijdlijn > section {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 3.75rem 5rem;
+  border-right: 2px solid var(--muted);
+  scroll-snap-align: start;
+}
+
+#tijdlijn > section > p:first-child {
+  margin: 0 0 1rem;
+  color: #c000ff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+#tijdlijn h2 {
+  margin: 0 0 1.5rem;
+  font-family: "FakeReceipt", Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  overflow-wrap: anywhere;
+}
+
+#tijdlijn > section > p:last-child {
+  max-width: 90ch;
+  margin: 0;
+  font-size: clamp(1rem, 1.3vw, 1.5rem);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+#tijdlijn::-webkit-scrollbar {
+  height: 12px;
+}
+
+#tijdlijn::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+#tijdlijn::-webkit-scrollbar-thumb {
+  background: #c000ff;
+  border-radius: 10px;
+}
+
+#skip-link {
+  position: fixed;
+  z-index: 20;
+  top: 1rem;
+  left: 1rem;
+  padding: 1rem;
+  border: 2px solid currentColor;
+  background: var(--background);
   color: var(--text);
+  transform: translateY(-200%);
 }
 
-@media (max-width: 1000px) {
+#skip-link:focus {
+  transform: translateY(0);
+}
+
+a:focus-visible,
+button:focus-visible,
+main:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 5px;
+}
+
+#tijdlijn:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: -3px;
+}
+
+@media (max-width: 1200px) {
+  body {
+    padding-top: 0;
+  }
+
+  body > header {
+    position: static;
+    padding: 5rem 1rem 1rem;
+  }
+
+  header nav {
+    gap: 0.6rem;
+  }
 
   #themeToggle {
     position: absolute;
@@ -238,125 +253,56 @@ background: var(--background);
     left: 1rem;
   }
 
-  body > header {
-    position: static;
-    padding: 5rem 1rem 1rem;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 0.6rem;
+  #inhoud {
+    scroll-margin-top: 1rem;
   }
+}
 
+@media (max-width: 1000px) {
   h1 {
     padding: 2rem 1rem 1rem;
     font-size: clamp(2rem, 8vw, 4rem);
-    overflow-wrap: anywhere;
   }
 
-
-  .instructie {
+  #instructie {
     display: none;
   }
 
- 
-  .tijdlijn {
-    display: flex;
+  #tijdlijn {
     flex-direction: column;
-    height: auto;
     min-height: 0;
     padding: 1rem;
     overflow: visible;
     scroll-snap-type: none;
   }
 
-  .kaart {
+  #tijdlijn > section {
     flex: none;
-    width: 100%;
-    min-width: 0;
     padding: 2rem 0;
-
     border-right: none;
     border-bottom: 1px solid var(--muted);
   }
 
-  .kaart h2 {
+  #tijdlijn h2 {
     font-size: clamp(1.5rem, 6vw, 2.5rem);
-    overflow-wrap: anywhere;
   }
 
-  .kaart p:not(.jaar) {
+  #tijdlijn > section > p:last-child {
     max-width: 100%;
     font-size: 1rem;
-    line-height: 1.6;
-    overflow-wrap: anywhere;
   }
 }
 
-
-.kaart {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-
-.kaart p:not(.jaar) {
-  font-family: "FakeReceipt", Arial, sans-serif;
-  font-weight: 400;
-}
-
-.kaart h2 {
-  font-family: "FakeReceipt", Arial, sans-serif;
-  font-weight: 400;
-}
-
-body > header a[aria-current="page"] {
-  background: #ff00cc;
-  color: #000;
-  border-color: #ff00cc;
-  box-shadow: 0 0 18px 4px #ff00cc;
-}
-
-@media (min-width: 1001px) {
-  body > header {
-    position: fixed;
-    z-index: 10;
-    top: 2rem;
-    right: 2rem;
-    bottom: auto;
-    left: auto;
-
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0.8rem;
-
-    width: auto;
-    padding: 0;
-    background: transparent;
-  }
-
-  /* Ruimte behouden voor de navigatie */
-  body {
-    padding-top: 7rem;
+@media (prefers-reduced-motion: no-preference) {
+  #tijdlijn {
+    scroll-behavior: smooth;
   }
 }
 
-.kaart p:not(.jaar) {
-  font-family: "AlteHaasGrotesk", Arial, sans-serif;
-  font-weight: 400;
-  font-size: clamp(1rem, 1.3vw, 1.5rem);
-  line-height: 1.6;
-  letter-spacing: normal;
-  text-transform: none;
-}
-
-@media (max-width: 1000px) {
-  .kaart p:not(.jaar) {
-    font-size: 1rem;
-  }
-}
-
-@media (min-width: 1001px) {
-  .kaart p:not(.jaar) {
-    max-width: 90ch;
-    
+@media (prefers-reduced-motion: reduce) {
+  header a,
+  #themeToggle {
+    transition: none;
+    transform: none;
   }
 }

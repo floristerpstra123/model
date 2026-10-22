@@ -1,31 +1,36 @@
 <!doctype html>
-<html lang="nl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Elektronische muziek</title>
-    <link rel="stylesheet" href="story.css" />
-  </head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>History — Floris Terpstra</title>
+  <link rel="stylesheet" href="story.css">
+</head>
+<body>
+  <a id="skip-link" href="#inhoud">Skip to content</a>
+  <button id="themeToggle" type="button">DAY MODE</button>
 
-  <body>
-   
-    <header>
+  <header>
+    <nav aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="contact.html">Who am I?</a>
       <a href="story.html" aria-current="page">History</a>
-      <a href="frequencies.html">FREQUENCIES</a>
-      <a href="https://github.com/floristerpstra123/model/edit/main/README.md" >log</a>
-      <a href="letithappen.html"> Songtekst</a>
-    </header>
-<button id="themeToggle" type="button">DAY MODE</button>
-    <h1>The history of electronical music</h1>
+      <a href="frequencies.html">Frequencies</a>
+      <a href="https://github.com/floristerpstra123/model/edit/main/README.md">Log</a>
+      <a href="letithappen.html">Songtekst</a>
+    </nav>
+  </header>
 
-    <p class="instructie">Swipe or scroll to the right →</p>
+  <main id="inhoud" tabindex="-1" aria-labelledby="pagina-titel">
+    <h1 id="pagina-titel">The history of electronic music</h1>
+    <p id="instructie">
+      Swipe or scroll to the right → You can also focus the timeline and use the arrow keys.
+    </p>
 
-    <main class="tijdlijn">
-      <section class="kaart">
-        <p class="jaar">1940–1960</p>
-        <h2>The pioneers</h2>
+    <section id="tijdlijn" tabindex="0" aria-label="Electronic music timeline">
+      <section aria-labelledby="pioneers-title">
+        <p>1940–1960</p>
+        <h2 id="pioneers-title">The pioneers</h2>
         <p>
           In France, Pierre Schaeffer began experimenting with recorded sound in
           1948. Working for French radio, he used sounds that already existed:
@@ -43,9 +48,9 @@
         </p>
       </section>
 
-      <section class="kaart">
-        <p class="jaar">1960–1970</p>
-        <h2>Synthesizers</h2>
+      <section aria-labelledby="synthesizers-title">
+        <p>1960s–1970s</p>
+        <h2 id="synthesizers-title">Synthesizers</h2>
         <p>
           The synthesizer was no longer only used to create strange sound
           effects. It could perform basslines, melodies, chords, percussion, and
@@ -61,9 +66,9 @@
         </p>
       </section>
 
-      <section class="kaart">
-        <p class="jaar">1980</p>
-        <h2>The 1960s–1970s: Synthesizers enter popular music</h2>
+      <section aria-labelledby="popular-music-title">
+        <p>1960s-1970s</p>
+        <h2 id="popular-music-title">The 1960s–1970s: Synthesizers enter popular music</h2>
         <p>
           During the 1960s and 1970s, electronic music moved from experimental
           studios into popular culture. Synthesizers became smaller and easier
@@ -82,9 +87,9 @@
         </p>
       </section>
 
-      <section class="kaart">
-        <p class="jaar">1990</p>
-        <h2>The 1980s: House and Techno</h2>
+      <section aria-labelledby="house-techno-title">
+        <p>1980s</p>
+        <h2 id="house-techno-title">The 1980s: House and Techno</h2>
         <p>
           In the 1980s, electronic dance music developed in clubs through DJs,
           dancers, drum machines, and synthesizers. House music emerged in
@@ -104,9 +109,9 @@
         </p>
       </section>
 
-      <section class="kaart">
-        <p class="jaar">2000–2010</p>
-        <h2>The 1990s and beyond: Rave culture spreads</h2>
+      <section aria-labelledby="rave-title">
+        <p>1990-2000s</p>
+        <h2 id="rave-title">The 1990s and beyond: Rave culture spreads</h2>
         <p>
           During the 1990s, house and techno spread across Europe through rave
           culture. Large events in clubs, warehouses, fields, and abandoned
@@ -114,7 +119,7 @@
           systems, and collective dancing. As electronic music travelled between
           cities, new local scenes created their own styles: Trance used melodic
           synthesizers, long build-ups, and hypnotic repetition. Jungle and drum
-          & bass developed in the UK through fast breakbeats, deep bass, and
+          &amp; bass developed in the UK through fast breakbeats, deep bass, and
           reggae, dub, and hip-hop influences. Gabber emerged in Rotterdam with
           fast tempos and distorted kick drums. Ambient focused on slower,
           atmospheric sound rather than the dancefloor. Dubstep developed in
@@ -125,40 +130,33 @@
           technology, rhythm, and collective freedom.
         </p>
       </section>
-    </main>
+    </section>
+  </main>
 
-<script>
-  const themeToggle = document.querySelector("#themeToggle");
-  const apparaatThema = window.matchMedia(
-    "(prefers-color-scheme: light)"
-  );
+  <script>
+    const themeToggle = document.querySelector("#themeToggle");
+    const apparaatThema = window.matchMedia("(prefers-color-scheme: light)");
 
-  function isLightMode() {
-    const keuze = document.body.dataset.theme;
+    function isLightMode() {
+      const keuze = document.body.dataset.theme;
+      return keuze ? keuze === "light" : apparaatThema.matches;
+    }
 
-    return keuze
-      ? keuze === "light"
-      : apparaatThema.matches;
-  }
+    function updateKnop() {
+      themeToggle.textContent = isLightMode() ? "NIGHT MODE" : "DAY MODE";
+    }
 
-  function updateKnop() {
-    themeToggle.textContent =
-      isLightMode() ? "NIGHT MODE" : "DAY MODE";
-  }
+    themeToggle.addEventListener("click", () => {
+      document.body.dataset.theme = isLightMode() ? "dark" : "light";
+      updateKnop();
+    });
 
-  themeToggle.addEventListener("click", () => {
-    document.body.dataset.theme =
-      isLightMode() ? "dark" : "light";
+    apparaatThema.addEventListener("change", () => {
+      document.body.removeAttribute("data-theme");
+      updateKnop();
+    });
 
     updateKnop();
-  });
-
- apparaatThema.addEventListener("change", () => {
-  document.body.removeAttribute("data-theme");
-  updateKnop();
-});
-
-  updateKnop();
-</script>  
-  </body>
+  </script>
+</body>
 </html>
