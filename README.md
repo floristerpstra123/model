@@ -161,6 +161,11 @@ Waarom is het goed om een grid in je ontwerp toe te passen? Noem een reden voor 
 Noem drie manieren om chaos in je ontwerp te voorkomen.
 Hoeveel gekkigheid moet er in je werk zitten?
 
+Songtekst:
+Let it happen - Tame Impala
+
+
+
 
 
 Deep dives:
