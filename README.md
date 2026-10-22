@@ -1,11 +1,23 @@
-
-
-
 # Model
 
 Het staat model voor digitale tuintjes welke bij 'Het web is voor iedereen' door studenten worden gemaakt.
 
 ## Learning Log
+
+process:
+
+Mijn eerste idee
+Mijn eerste idee was om een website met een equalizer te maken. Dat leek mij passend bij elektronische muziek, omdat een equalizer geluid visueel kan weergeven. Toch ben ik uiteindelijk voor een andere richting gegaan: een club-geïnspireerd ontwerp. Ik wilde niet alleen muziek laten zien, maar vooral de sfeer en het gevoel van elektronische muziek overbrengen.
+
+Voor mijn uiteindelijke ontwerp heb ik neonkleuren, opvallende lettertypen en bewegende achtergronden gebruikt. Hiermee wilde ik het dansgevoel en de euforie van een clubavond oproepen. De kleuren paars, roze en rood verwijzen naar clubverlichting. De bewegende teksten en kleurverlopen geven de pagina energie.
+De Engelse achtergrondteksten gaan over de geschiedenis en cultuur van elektronische muziek. Zo ondersteunen ze niet alleen de uitstraling, maar ook het onderwerp van de website.
+
+Code:
+
+Ik gebruik @font-face om mijn eigen lettertypen in te laden. LEDLIGHT gebruik ik voor de grote titel, navigatie en bewegende teksten. Dit lettertype past bij het elektronische sfeer van de website. Voor de uitleg gebruik ik AlteHaasGrotesk, zodat langere teksten makkelijker te lezen zijn. Ik gebruik ook nog voor sommige titels de font "Fake receipt". Ik heb express voor 3 fonts gekozen omdat ik dit een goede balans vond aan tekst zodat het leesbaar maar alsnog visueel sterk bleef. 
+
+De achtergrond bestaat uit meerdere radial-gradient()-kleurverlopen. Met filter: blur maak ik de kleuren zachter, waardoor ze op verspreid clublicht lijken. Deze achtergrond staat in body::before. Daardoor heb ik geen extra HTML-element nodig voor de decoratieve laag.
+
 
 
 7 september:
