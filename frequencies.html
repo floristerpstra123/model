@@ -234,36 +234,35 @@
     "(prefers-color-scheme: light)"
   );
 
-  const savedTheme = localStorage.getItem("theme");
+  function isLightMode() {
+    const keuze = document.body.dataset.theme;
 
-  let currentTheme =
-    savedTheme === "light" || savedTheme === "dark"
-      ? savedTheme
-      : apparaatThema.matches ? "light" : "dark";
-
-  function applyTheme() {
-    document.body.dataset.theme = currentTheme;
-
-    themeButton.textContent =
-      currentTheme === "dark" ? "DAY MODE" : "NIGHT MODE";
+    return keuze
+      ? keuze === "light"
+      : apparaatThema.matches;
   }
 
-  applyTheme();
+  function updateKnop() {
+    themeButton.textContent =
+      isLightMode() ? "NIGHT MODE" : "DAY MODE";
+  }
 
-  // Handmatig wisselen via de knop.
+  // Bij het openen: volg de MacBook-instelling.
+  document.body.removeAttribute("data-theme");
+  updateKnop();
+
+  // De knop blijft handmatig werken op deze pagina.
   themeButton.addEventListener("click", () => {
-    currentTheme = currentTheme === "dark" ? "light" : "dark";
+    document.body.dataset.theme =
+      isLightMode() ? "dark" : "light";
 
-    localStorage.setItem("theme", currentTheme);
-    applyTheme();
+    updateKnop();
   });
 
-  // Direct meeveranderen met je MacBook-instelling.
+  // Bij een wijziging op je MacBook: volg weer het systeem.
   apparaatThema.addEventListener("change", () => {
-    localStorage.removeItem("theme");
-
-    currentTheme = apparaatThema.matches ? "light" : "dark";
-    applyTheme();
+    document.body.removeAttribute("data-theme");
+    updateKnop();
   });
 </script>
   </body>
