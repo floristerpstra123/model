@@ -159,8 +159,10 @@ Niet elke pagina heeft evenveel beweging. Home is drukker, met bewegende teksten
 Zo hebben de pagina’s wel hun eigen indeling, maar zorgen de fonts, kleuren en knoppen ervoor dat het geheel bij elkaar blijft passen.
 
 
-Songtekst:
-Let it happen - Tame Impala
+## Songtekst
+
+### Let it happen - Tame Impala
+
 <img width="3024" height="4032" alt="IMG_7273" src="https://github.com/user-attachments/assets/0d58609d-720e-4635-9d65-5ab24465496a" />
 <img width="3024" height="4032" alt="IMG_7272 (1)" src="https://github.com/user-attachments/assets/bb54f6b7-c24a-450d-aaed-11455fbaf659" />
 <img width="3024" height="4032" alt="IMG_7274" src="https://github.com/user-attachments/assets/b215e572-54c2-4b95-9469-1fb9df639041" />
@@ -175,9 +177,19 @@ Ik heb gekozen voor het stukje
 All this running around, bearing down on my shoulders
 I can hear an alarm it must be morning.
 
-Toen ik het luisterde kreeg ik impressie van omvallen en weer opstaan, de muziek die langzaam luider en duidelijker word, waardoor je het gevoel krijgt dat je bij het woordje morning daadwerkelijk wakker word. Ik heb er daarom voor gekozen om een soort omvallende en steeds kleinere tekst te maken, die bij het einde weer groter word, net alsof je wakker word. De golfachtige vorm is gebasseerd op de muziek die voelt alsof het om je heen beweegt. 
+Toen ik naar het nummer luisterde, kreeg ik het gevoel van omvallen en weer opstaan. De muziek wordt langzaam luider en duidelijker. Bij het woord ‘morning’ voelde het voor mij alsof je echt wakker wordt. Dat gevoel wilde ik terug laten komen in de tekst. De woorden worden eerst steeds kleiner en aan het einde weer groter, alsof je langzaam wakker wordt en alles weer duidelijker ziet.
 
-Checkout vragen: 
+De woorden staan in een golfachtige vorm. Dat past bij hoe de muziek voor mij klinkt: niet als een rechte lijn, maar als iets dat om je heen beweegt. Door de tekst zo te plaatsen, volgt je blik die beweging tijdens het lezen.
+
+Vier losse woorden hebben een eigen animatie, gebaseerd op hoe ze klinken of wat ze betekenen:
+
+‘Around’ kantelt langzaam en veert een beetje terug. Tijdens het luisteren klonk dit woord voor mij alsof het omviel. De animatie maakt dat gevoel zichtbaar.
+‘Shoulders’ zakt naar beneden. Dit verwijst naar het gevoel van gewicht op je schouders, alsof er iets op je drukt.
+‘Alarm’ trilt snel heen en weer. Het woord trekt daardoor meteen de aandacht, net zoals een alarm je uit je slaap haalt.
+‘Morning’ verschijnt langzaam en beweegt iets omhoog. Dit is het einde van de beweging: alsof je wakker wordt en de ochtend langzaam tot je doordringt.
+De animaties zijn dus niet alleen toegevoegd om de pagina te laten bewegen. Elk woord heeft een eigen beweging die aansluit op mijn gevoel bij de muziek of op de betekenis van het woord.
+
+## Check out vragen
 
 7 september:
 
