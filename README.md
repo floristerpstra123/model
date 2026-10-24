@@ -6,17 +6,18 @@ Het staat model voor digitale tuintjes welke bij 'Het web is voor iedereen' door
 
 ## Mijn eerste idee
 
-Het eerste idee was een website met een equalizer. Dat leek me goed bij elektronische muziek passen, omdat je daarmee geluid zichtbaar kunt maken. Toch ben ik uiteindelijk een andere kant opgegaan. Alleen geluid laten zien was niet helemaal wat ik wilde. Het ging me meer om de sfeer en het gevoel van een clubavond.
+Het eerste idee was een website met een equalizer. Dat leek me goed bij elektronische muziek passen, omdat je daarmee geluid zichtbaar kunt maken. Toch ben ik uiteindelijk een andere kant opgegaan. Alleen geluid laten zien was niet helemaal wat ik wilde. Ik wilde meer de sfeer uitbeelden van elektronische muziek.
 
-Daaruit ontstond het club-geïnspireerde ontwerp, met neonkleuren, opvallende fonts en bewegende achtergronden. Paars, roze en rood verwijzen naar clubverlichting. De bewegende teksten en gradients geven de pagina energie en passen bij het dansgevoel dat ik wilde overbrengen.
+Daaruit ontstond het club-geïnspireerde ontwerp, met neonkleuren, opvallende fonts en bewegende achtergronden. De bewegende teksten en gradients geven de pagina energie en passen bij het dansgevoel dat ik wilde overbrengen.
 
 De Engelse achtergrondteksten sluiten ook aan op de inhoud. Ze gaan over de geschiedenis, cultuur en verbindende kracht van elektronische muziek.
 
 ### Lettertypes
 
-De fonts worden ingeladen met `@font-face`. LEDLIGHT komt terug in de grote titels, navigatie en bewegende teksten. Dat font heeft precies de elektronische uitstraling die ik zocht. AlteHaasGrotesk is rustiger en wordt daarom gebruikt voor langere uitleg. Sommige titels hebben FakeReceipt.
+De fonts worden ingeladen met `@font-face`. LEDLIGHT komt terug in de grote titels, navigatie en bewegende teksten. Dat font heeft precies de elektronische uitstraling die ik zocht. AlteHaasGrotesk is rustiger en wordt daarom gebruikt voor langere uitleg. kleinere titels hebben FakeReceipt. 
 
 Drie fonts vond ik een goede balans: genoeg verschil om de pagina’s interessant te maken, zonder dat de tekst onleesbaar wordt.
+
 
 ## Homepagina
 
@@ -28,15 +29,10 @@ Op de achtergrond bewegen teksten over synthesizers, de dansvloer en de geschied
 
 ### Opbouw in HTML
 
-De navigatie staat in `<header>` en `<nav>`. De titel en twee korte teksten staan in `<main>`. Via `aria-labelledby` is de hoofdinhoud gekoppeld aan de paginatitel.
+De navigatie staat in `<header>` en `<nav>`. De titel en twee korte teksten staan in `<main>`. 
 
 Voor de achtergrondteksten staat er een aparte `<aside>` met `aria-hidden="true"`. Een schermlezer leest deze teksten daardoor niet voor. Ze zijn vooral bedoeld voor de sfeer; de belangrijke informatie staat ook op de inhoudelijke pagina’s.
 
-### De tekst centreren
-
-Flexbox zet de titel en alinea’s onder elkaar. `flex-direction: column` bepaalt de richting, terwijl `justify-content: center` en `align-items: center` de inhoud centreren. De afstand tussen de onderdelen wordt geregeld met `gap`.
-
-Op grotere schermen heeft de hoofdinhoud `min-height: 100svh`. Daardoor vult het blok minimaal de kleine viewporthoogte. Bij maximaal 1200 pixels veranderen de hoogte en padding. De navigatie staat dan niet meer vast bovenaan, maar neemt gewoon ruimte in op de pagina.
 
 ### Bewegende teksten en achtergrond
 
@@ -70,7 +66,7 @@ Alleen de apparaten bespreken vond ik te beperkt. De mensen achter de muziek zij
 
 ### Horizontale tijdlijn
 
-Op grotere schermen staan de periodes naast elkaar. Dat werkt met `display: flex` en `flex: 0 0 100%`. Elk blok krijgt daarmee de volle breedte van de binnenruimte van de tijdlijn en krimpt niet. Met `overflow-x: auto` kan je vervolgens naar rechts scrollen.
+Op grotere schermen staan de periodes naast elkaar. Door `display: flex` en `flex: 0 0 100%`. Elk blok krijgt daarmee de volle breedte van de binnenruimte van de tijdlijn en krimpt niet. Met `overflow-x: auto` kan je vervolgens naar rechts scrollen.
 
 `scroll-snap-type: x mandatory` en `scroll-snap-align: start` zorgen dat de tijdlijn bij het begin van een blok vastklikt. Zo komt een periode na het scrollen op een vaste plek in beeld. De paarse scrollbar maakt zichtbaar dat er meer inhoud naast het eerste blok staat.
 
@@ -118,7 +114,7 @@ Bij maximaal 750 pixels verandert het grid naar één kolom en staan de artikele
 
 ### Wat staat erop?
 
-Who am I geeft de website een persoonlijkere kant. Hier stel ik mezelf voor en vertel ik over mijn interesse in de cultuur, geschiedenis en visuele kant van elektronische muziek.
+Op de Who am I pagina stel ik mezelf voor en vertel ik over mijn interesse in de cultuur, geschiedenis en visuele kant van elektronische muziek.
 
 De tekst gaat ook over de invloed buiten clubs, bijvoorbeeld in pop, hiphop, films en games. Daarmee sluit de introductie aan op de onderwerpen van de andere pagina’s.
 
@@ -205,7 +201,7 @@ Ik wil een website maken dat voelt als een interactieve ervaring die de gebruike
 9 September:
 
 Leg uit waar het Visual Research in 3 stappen naartoe werkt
-
+Door visual research doe je ideeen op door vormen en kleuren die de vormgeving bepalen.
 
 Vertel in 2 zinnen waar jouw Garden over gaat, en met welke content je dat gaat doen (beeld, tekst, sound, animatie enz).
 Mijn garden gaat over de geschiedenis van elektronische muziek, ik ga veel gebruik maken van velle kleuren en een donkere achtergrond waardoor er een gevoel van feest en euforie komt. 
@@ -370,7 +366,7 @@ Ik zou bepaalde woorden waar een toon verschil is laten bewegen. ‘Down’ kan 
 
 
 https://codepen.io/your-work?item_type=PEN
-Ik heb niet alle deepdives opgeslagen dus hierondernog wat foto's van opdrachten.
+Ik heb niet alle deepdives opgeslagen dus hieronder nog wat foto's van opdrachten.
 
 Deep dives:
 
@@ -381,7 +377,7 @@ Light en dark:
 Mooie kleuren en gradients:
 <img width="1209" height="803" alt="Screenshot 2026-10-17 at 17 16 36" src="https://github.com/user-attachments/assets/858b185e-1f55-41ab-88bd-9604d42584c7" />
 
-Grid 101 + Media queries:
+Grid 101 + Media queries: 
 
 <img width="2968" height="1724" alt="image" src="https://github.com/user-attachments/assets/22ab38da-8166-49bc-a246-a85f5d478339" />
 <img width="3016" height="1726" alt="image" src="https://github.com/user-attachments/assets/b93141db-3ad4-443b-90ff-62846915b2e9" />
